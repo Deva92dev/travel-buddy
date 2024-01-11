@@ -1,10 +1,17 @@
+import FeaturedDestinations from '@/components/FeaturedDestinations';
 import Hero from '@/components/Hero';
-import Image from 'next/image';
+import Newsletter from '@/components/Newsletter';
+import PopularPlaces from '@/components/PopularPlaces';
+import Reviews from '@/components/Reviews';
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <main>
       <Hero />
+      <FeaturedDestinations />
+      <Newsletter />
+      <PopularPlaces />
+      <Reviews />
     </main>
   );
 }
