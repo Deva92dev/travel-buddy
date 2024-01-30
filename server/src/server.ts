@@ -1,32 +1,37 @@
 import express from 'express';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
 import http from 'http';
+import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { connectDB } from './dbConfig/connect';
+import { connectDB } from './utils/connect';
+import { log } from './utils/logger';
 
+//   wrap your asynchronous code in try/catch blocks to handle potential errors
 dotenv.config();
 const app = express();
 
+app.use(express.json());
 app.use(
   cors({
     credentials: true,
   })
 );
-app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(compression());
+
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.send(`<h1> Travel Buddy </h1>`);
+});
 
 const server = http.createServer(app);
 const port = process.env.PORT || 5000;
 
-const start = () => {
+const start = async () => {
   try {
-    server.listen(port, async () => {
-      await connectDB();
-      console.log(`Server is listening on the port : ${port}`);
+    await connectDB();
+    server.listen(port, () => {
+      log.info(`Server is listening on the port : ${port}`);
     });
   } catch (error) {
     console.log(error);
