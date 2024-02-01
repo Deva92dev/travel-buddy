@@ -2,19 +2,94 @@ export interface PlacesDataTypes {
   name: string;
   imageUrl: string;
   country: string;
-  description: string;
+  description: DayInfo[];
   cost: number;
   reviews: number;
   numOfDaysToStay: number;
 }
 
-export const Places: PlacesDataTypes[] = [
+interface DayInfo {
+  dayHeading: string;
+  dayContent: string;
+}
+
+const Places: PlacesDataTypes[] = [
   {
     name: 'Cinque terre',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "Cinque Terre unveils a breathtaking tapestry woven with rugged cliffs, vibrant villages, and sapphire seas. Imagine candy-colored houses clinging precariously to cliffs, their pastel hues kissed by the warm Italian sun. Each village whispers stories of ancient mariners, their secrets echoing in narrow lanes and weathered piazzas. Wander through labyrinthine alleyways, the scent of freshly baked focaccia mingling with the salty air. Tiny harbors bob with bobbing fishing boats, their nets heavy with the day's bounty. As the sun dips below the horizon, casting long shadows across the turquoise expanse, Cinque Terre comes alive with the twinkling lights of a thousand dreams.",
+    description: [
+      {
+        dayHeading: `Day 1: Monterosso al Mare`,
+        dayContent: `
+        "Morning: Arrive in Monterosso"
+Check into your accommodation.
+Spend the morning relaxing on Monterosso's sandy beach.
+"Afternoon: Old Town and Lemon Trees"
+Explore the charming Old Town with narrow streets.
+Visit the Lemon Trees Park for beautiful views.
+"Evening: Seafood Dinner"
+Enjoy a seafood dinner at a local restaurant.
+Stroll along the waterfront promenade.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Vernazza`,
+        dayContent: `
+        "Morning: Hike to Vernazza"
+Take the scenic hike from Monterosso to Vernazza (Sentiero Azzurro).
+Capture breathtaking views along the way.
+"Afternoon: Vernazza Exploration"
+Explore Vernazza's harbor and colorful houses.
+Visit the Doria Castle for panoramic views.
+"Evening: Sunset Aperitivo"
+Enjoy an aperitivo with a view of the sunset.
+Try local wines at a wine bar
+        `,
+      },
+      {
+        dayHeading: `Day 3: Corniglia`,
+        dayContent: `
+        "Morning: Boat Ride to Corniglia"
+Take a boat ride or train to Corniglia.
+Explore Corniglia's charming streets.
+"Afternoon: Vineyard Visit"
+Hike the scenic path to a local vineyard.
+Taste local wines and enjoy the landscape.
+"Evening: Dinner in Corniglia"
+Have dinner at a local trattoria.
+Relax in the peaceful atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Manarola`,
+        dayContent: `
+        "Morning: Explore Manarola"
+Spend the morning exploring Manarola.
+Visit the Church of San Lorenzo.
+"Afternoon: Cinque Terre Wine Tasting"
+Participate in a Cinque Terre wine tasting tour.
+Learn about the region's wines.
+"Evening: Sunset Views"
+Enjoy the sunset views from Manarola's rocky coastline.
+Have dinner at a seaside restaurant
+        `,
+      },
+      {
+        dayHeading: `Day 5: Riomaggiore`,
+        dayContent: `
+        "Morning: Riomaggiore Harbor"
+Explore the colorful harbor of Riomaggiore.
+Visit the Church of San Giovanni Battista.
+"Afternoon: Scenic Walks"
+Take a scenic walk along the Via dell'Amore.
+Relax by the seaside.
+"Evening: Farewell Dinner"
+Have a farewell dinner in Riomaggiore.
+Reflect on your Cinque Terre adventure.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -23,8 +98,79 @@ export const Places: PlacesDataTypes[] = [
     name: 'Rome',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "In Rome, whispers of the Eternal City echo through cobbled streets and grand piazzas. Ancient grandeur stands shoulder-to-shoulder with vibrant chaos, history seeping from every weathered stone. Colossal marble columns, remnants of an empire's might, pierce the azure sky, casting long shadows over bustling cafes and sun-drenched gelaterias. Beneath their imposing facades, ancient ruins murmur forgotten tales. The Colosseum's elliptical embrace evokes gladiatorial clashes, while the Pantheon's oculus bathes the interior in a celestial glow. Trevi Fountain's waters dance, coins glinting like wishes granted as the sun sets behind Michelangelo's dome, a fiery beacon against the twilight canvas.",
+    description: [
+      {
+        dayHeading: `Day 1: Historical Rome`,
+        dayContent: `
+        "Morning: Colosseum and Roman Forum"
+Start your day early to avoid crowds.
+Explore the iconic Colosseum and imagine the gladiator battles.
+Walk through the nearby Roman Forum to see ancient ruins.
+"Afternoon: Palatine Hill and Capitoline Museums"
+Visit Palatine Hill, where Rome was founded, and enjoy panoramic views.
+Explore the Capitoline Museums, housing impressive art collections.
+"Evening: Trastevere"
+Cross the Tiber River to Trastevere.
+Wander through narrow streets, enjoy authentic Roman cuisine, and experience the local atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Vatican City`,
+        dayContent: `
+        "Morning: Vatican Museums and Sistine Chapel"
+Visit the Vatican Museums early to avoid long lines.
+Admire the masterpieces, including the Sistine Chapel ceiling.
+"Afternoon: St. Peter's Basilica and St. Peter's Square"
+Explore St. Peter's Basilica, one of the world's largest churches.
+Climb to the top for a stunning view of Rome.
+Stroll through St. Peter's Square.
+"Evening: Castel Sant'Angelo"
+Walk to Castel Sant'Angelo, a historic fortress.
+Enjoy the view of the Tiber River and the city from the castle.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Ancient Appian Way and Catacombs`,
+        dayContent: `
+        "Morning: Appian Way and Catacombs"
+Take a trip to the Appian Way, one of the oldest Roman roads.
+Explore the catacombs along the route.
+"Afternoon: Baths of Caracalla"
+Visit the Baths of Caracalla, ancient public baths with well-preserved ruins.
+"Evening: Aventine Hill and Keyhole of Rome"
+Visit Aventine Hill for a quieter atmosphere.
+Peer through the keyhole at the Priory of the Knights of Malta for a unique view of St. Peter's Basilica.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Modern Rome`,
+        dayContent: `
+        "Morning: Pantheon and Piazza Navona"
+Explore the Pantheon, a well-preserved Roman temple.
+Visit Piazza Navona, known for its beautiful fountains and architecture.
+"Afternoon: Trevi Fountain and Spanish Steps"
+Throw a coin into the Trevi Fountain for good luck.
+Climb the Spanish Steps and enjoy the view.
+"Evening: Evening Stroll in the City Center"
+Take a leisurely walk through the city center.
+Enjoy dinner at a traditional Roman trattoria.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Gardens and Borghese Gallery`,
+        dayContent: `
+        "Morning: Villa Borghese Gardens"
+Explore the lush Villa Borghese Gardens.
+Rent a rowboat at the lake for a relaxing experience.
+"Afternoon: Borghese Gallery"
+Visit the Borghese Gallery to see an impressive art collection.
+Admire sculptures by Bernini and paintings by Caravaggio.
+"Evening: Piazza del Popolo"
+Spend your final evening at Piazza del Popolo.
+Enjoy the vibrant atmosphere and reflect on your time in Rome.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -33,8 +179,76 @@ export const Places: PlacesDataTypes[] = [
     name: 'Florence',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "In Florence, art bleeds into every sun-drenched cobblestone. Brunelleschi's Duomo, a marble crown piercing the sky, watches over Michelangelo's David, his sculpted muscles flexing with unspoken defiance. Ponte Vecchio's goldsmiths work magic beneath its ancient arches, their tiny hammers chiming like whispers of a Renaissance lullaby.The Arno River, a liquid jewel snaking through the city, reflects the pastel facades of Pitti Palace and Uffizi Gallery, their galleries overflowing with the whispers of da Vinci and Botticelli. In hidden piazzas, laughter spills from trattorias, the aroma of grilled lamb and sage wafting on the warm breeze. As the sun dips behind Ponte Vecchio, the city blushes, and Florence becomes a canvas painted with the dreams of a thousand artists.",
+    description: [
+      {
+        dayHeading: `Day 1: Historic Center`,
+        dayContent: ` 
+        "Morning: Florence Cathedral (Duomo)"
+Start your day by visiting the Florence Cathedral, including the iconic Duomo and Baptistery.
+Climb to the top of the Duomo for panoramic views.
+"Afternoon: Uffizi Gallery"
+Explore the Uffizi Gallery, home to a vast collection of Renaissance art.
+Admire works by Michelangelo, Leonardo da Vinci, Botticelli, and more.
+"Evening: Ponte Vecchio"
+Walk to the Ponte Vecchio, a historic bridge over the Arno River.
+Enjoy the sunset and explore the shops on the bridge.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Florence's Artistic Treasures`,
+        dayContent: ` 
+        "Morning: Accademia Gallery"
+Visit the Accademia Gallery to see Michelangelo's "David."
+Explore other sculptures and artworks in the gallery.
+"Afternoon: Pitti Palace and Boboli Gardens"
+Visit the Pitti Palace and its stunning Renaissance art collections.
+Stroll through the beautiful Boboli Gardens behind the palace.
+"Evening: Oltrarno District"
+Explore the Oltrarno district for a more local and authentic experience.
+Have dinner at a traditional trattoria.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Florence's Museums and Churches`,
+        dayContent: ` 
+        "Morning: Bargello Museum and Santa Croce"
+Visit the Bargello Museum, which houses sculptures and decorative arts.
+Explore the Basilica of Santa Croce, the final resting place of many notable Italians.
+"Afternoon: San Lorenzo Market and Medici Chapels"
+Explore the San Lorenzo Market for local goods and street food.
+Visit the Medici Chapels to see impressive sculptures.
+"Evening: Florence by Night"
+Take a leisurely evening stroll along the Arno River.
+Enjoy gelato at one of the local gelaterias.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Day Trip to Tuscany`,
+        dayContent: ` 
+        "Morning: Chianti Region"
+Take a day trip to the Chianti region, known for its vineyards and rolling hills.
+Visit a local winery for wine tasting and scenic views.
+"Afternoon: Siena"
+Explore the historic city of Siena, known for its medieval streets and Piazza del Campo.
+Visit the Siena Cathedral.
+"Evening: Return to Florence"
+Return to Florence in the evening and have dinner at a Florentine restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Relaxation and Exploration`,
+        dayContent: ` 
+        "Morning: Boboli Gardens or Piazzale Michelangelo"
+Spend a relaxing morning in either the Boboli Gardens or at Piazzale Michelangelo for stunning city views.
+"Afternoon: Florence's Hidden Gems"
+Explore less crowded gems like the Brancacci Chapel or San Miniato al Monte.
+Visit the Palazzo Davanzati for a glimpse into medieval Florence.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a traditional Florentine restaurant.
+Reflect on your time in this beautiful city.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -43,8 +257,79 @@ export const Places: PlacesDataTypes[] = [
     name: 'Venice ',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "In Venice, water is not an obstacle, but an avenue. Gondolas, sleek black serpents, glide through shimmering canals, their silent passage mirrored in the glassy reflections of palazzos adorned in Byzantine lace. Bridges arched like lovers' sighs connect a labyrinth of islands, each whispering tales of doges and masked revelers.Sunlight dances on the water, dappling cobbled streets and casting long shadows from iron grates. The air hums with the murmur of voices and the rhythmic gondolier's cry, weaving a melody that echoes through centuries. As the sun dips below the horizon, the city blushes, its gilded facades ablaze with warm hues, and Venice becomes a dream where water and stone waltz in an eternal embrace.",
+    description: [
+      {
+        dayHeading: `Day 1: Introduction to Venice`,
+        dayContent: `
+        "Morning: St. Mark's Square"
+Start your visit at St. Mark's Square.
+Explore St. Mark's Basilica and the Campanile.
+Enjoy a coffee at one of the historic cafes.
+"Afternoon: Doge's Palace and Bridge of Sighs"
+Visit Doge's Palace, a symbol of Venetian power and history.
+Cross the Bridge of Sighs for scenic views.
+"Evening: Gondola Ride"
+Take a relaxing gondola ride through the canals.
+Explore the charming alleyways of Venice.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Islands of Venice`,
+        dayContent: `
+        "Morning: Murano"
+Take a boat to Murano, known for its glassblowing traditions.
+Visit a glass factory and witness a glassblowing demonstration.
+"Afternoon: Burano"
+Head to Burano, famous for its colorful houses.
+Explore the island and enjoy local seafood.
+"Evening: Torcello"
+Visit Torcello, an island with historic churches.
+Climb the bell tower for panoramic views.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Art and Culture`,
+        dayContent: `
+        "Morning: Gallerie dell'Accademia"
+Explore Gallerie dell'Accademia, housing a superb collection of Venetian art.
+Admire works by Bellini, Titian, and other Renaissance masters.
+"Afternoon: Peggy Guggenheim Collection"
+Visit the Peggy Guggenheim Collection for modern art.
+Explore the sculpture garden overlooking the Grand Canal.
+"Evening: Dinner in Dorsoduro"
+Have dinner in the Dorsoduro district, known for its artsy atmosphere.
+Walk along the Zattere promenade.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Hidden Gems`,
+        dayContent: `
+        "Morning: Cannaregio"
+Explore the Cannaregio district, known for its local vibe.
+Visit the Jewish Ghetto, one of the oldest in the world.
+"Afternoon: Scuola Grande di San Rocco"
+Visit the Scuola Grande di San Rocco for Tintoretto's masterpieces.
+Wander through the nearby streets.
+"Evening: Rialto Bridge"
+Explore the Rialto Bridge area.
+Have dinner at a canal-side restaurant
+        `,
+      },
+      {
+        dayHeading: `Day 5: Relaxation and Exploration`,
+        dayContent: `
+        "Morning: Giardini Papadopoli"
+Relax in the Giardini Papadopoli, a peaceful garden.
+Take a leisurely walk along the canals.
+"Afternoon: Lido di Venezia"
+Take a vaporetto to Lido di Venezia.
+Relax on the beach or explore the historic Grand Hotel Excelsior.
+"Evening: Sunset at San Giorgio Maggiore"
+Take a boat to San Giorgio Maggiore.
+Enjoy the sunset views of Venice from the island.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -53,8 +338,77 @@ export const Places: PlacesDataTypes[] = [
     name: 'The Amalfi Coast',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "Sun-kissed cliffs cradle villages like precious pearls along the Amalfi Coast. Vibrant houses, in hues borrowed from the cerulean sky and the Mediterranean Sea, cling precariously to the rock face, their pastel facades adorned with blooming bougainvillea. The scent of lemon groves mingles with the salty air, carried on the gentle caress of the sea breeze. Emerald vineyards blanket the hillsides, their terraced rows like intricate brushstrokes on a living canvas. Quaint fishing villages dot the coastline, their colorful boats bobbing lazily in turquoise coves. The rhythmic lap of waves against the shore mingles with the laughter of sunbathers on secluded beaches, creating a melody as mesmerizing as the scenery itself. The Amalfi Coast is a place where time slows down, where worries melt away like ice cream under the afternoon sun. It's a place to wander cobbled streets, savor fresh seafood on sun-drenched terraces, and lose yourself in the breathtaking beauty of nature's embrace",
+    description: [
+      {
+        dayHeading: `Day 1: Sorrento`,
+        dayContent: `
+        "Morning: Explore Sorrento"
+Begin your journey in Sorrento.
+Stroll through the historic center, visit Piazza Tasso, and admire the views of the Bay of Naples.
+"Afternoon: Marina Grande and Museo Correale"
+Head to Marina Grande for a relaxing afternoon by the sea.
+Visit Museo Correale to explore local art and culture.
+"Evening: Dinner in the Old Town"
+Enjoy dinner at a traditional Sorrentine restaurant.
+Sample local specialties like limoncello and seafood.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Positano`,
+        dayContent: `
+        "Morning: Journey to Positano"
+Take a scenic drive or boat ride to Positano.
+Explore the charming streets lined with pastel-colored houses.
+"Afternoon: Beach Time and Shopping"
+Relax on Spiaggia Grande, Positano's main beach.
+Shop for local ceramics, fashion, and souvenirs in the boutiques.
+"Evening: Sunset Views"
+Climb to the Church of Santa Maria Assunta for panoramic sunset views.
+Enjoy dinner with a view at a cliffside restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Amalfi`,
+        dayContent: `
+        "Morning: Visit Amalfi"
+Travel to the town of Amalfi.
+Explore the historic center, visit the Cathedral of St. Andrew, and wander through the lively Piazza Duomo.
+"Afternoon: Paper Museum and Lemon Groves"
+Visit the Paper Museum to learn about Amalfi's paper-making history.
+Explore the nearby lemon groves and enjoy fresh lemon-themed treats.
+"Evening: Dinner with Sea Views"
+Have dinner at a seaside restaurant in Amalfi.
+Sample local seafood dishes.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Ravello`,
+        dayContent: `
+        "Morning: Ravello Exploration"
+Head to Ravello, known for its tranquility and gardens.
+Visit Villa Rufolo and Villa Cimbrone for breathtaking views.
+"Afternoon: Mediterranean Gardens"
+Spend the afternoon exploring Ravello's Mediterranean gardens.
+Relax and enjoy the serene atmosphere.
+"Evening: Classical Concert in Villa Rufolo"
+Check if there are any classical concerts or events in Villa Rufolo.
+Attend a performance in this magical setting.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Day at Sea`,
+        dayContent: `
+        "Morning: Full Day Boat Excursion"
+Take a full-day boat excursion along the Amalfi Coast.
+Explore hidden coves, swim in crystal-clear waters, and enjoy the coastal scenery.
+"Afternoon: Lunch in a Secluded Bay"
+Stop for a seaside lunch in a quiet bay.
+Enjoy fresh seafood and local delicacies on board.
+"Evening: Sunset on the Water"
+Witness the sunset from the boat as you return to your starting point.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -63,8 +417,75 @@ export const Places: PlacesDataTypes[] = [
     name: 'Pompeii',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "Pompeii, frozen in time by Vesuvius' fiery breath, unveils a haunting tableau of a life once vibrantly lived. Sunlight paints the Forum's ruins in soft gold, their silent columns reaching for the cerulean sky like petrified ghosts. In the distance, Mount Vesuvius broods, a brooding reminder of the day it became Pompeii's executioner.Step onto cobbled streets worn smooth by the tread of sandals long gone. Peer into bakeries, their ovens cold, loaves forever poised for baking. In bathhouses, intricate mosaics whisper of luxurious soaks, while amphitheater seats wait for echoes of gladiator clashes that will never come. Pompeii is a macabre museum, its exhibits not artifacts, but lives cut short, frozen in the final throes of a fiery apocalypse.Yet, beneath the ash, Pompeii's vibrancy flickers. Imagine the chatter in bustling markets, the clink of coins in taverns, the laughter echoing from grand villas. It's a city suspended between life and death, a poignant reminder of the fragility of existence and the enduring power of human stories, even in the face of oblivion. ",
+    description: [
+      {
+        dayHeading: `Day 1: Pompeii Archaeological Site`,
+        dayContent: `
+        "Morning: Pompeii Entrance and Forum"
+Arrive early to avoid crowds and start at the main entrance.
+Explore the Forum, the heart of ancient Pompeii.
+"Afternoon: Temples and Public Buildings"
+Visit the Temple of Apollo and the Basilica.
+Explore the public buildings like the Amphitheatre and the Odeon.
+"Evening: Villa dei Misteri"
+Spend the late afternoon exploring the well-preserved frescoes in the Villa dei Misteri.
+Learn about the mysteries behind the villa's artwork.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Houses and Artifacts`,
+        dayContent: `
+        "Morning: House of the Faun and House of the Vettii"
+Explore the House of the Faun, one of Pompeii's largest houses.
+Visit the House of the Vettii, known for its preserved frescoes.
+"Afternoon: Baths and Brothel"
+Visit the Stabian Baths for a glimpse into ancient Roman bathing culture.
+Explore the Lupanare, Pompeii's infamous brothel.
+"Evening: Street of Tombs"
+Stroll along the Street of Tombs just outside the city walls.
+Observe the well-preserved funerary monuments.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Mount Vesuvius`,
+        dayContent: `
+        "Morning: Hike to the Summit"
+Take a day trip to Mount Vesuvius.
+Hike to the summit for panoramic views of the Bay of Naples and Pompeii.
+"Afternoon: Winery Visit"
+Descend from Vesuvius and visit a local winery.
+Taste wines produced from the volcanic soil.
+"Evening: Sunset Views"
+Return to Pompeii and enjoy dinner with views of the illuminated archaeological site.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Herculaneum`,
+        dayContent: `
+        "Morning: Full Day Excursion to Herculaneum"
+Take a day trip to Herculaneum, another well-preserved Roman town.
+Explore the Herculaneum Archaeological Site, including the luxurious Villa dei Papiri.
+"Afternoon: Virtual Archaeological Museum"
+Visit the Virtual Archaeological Museum in Ercolano.
+Learn more about the artifacts discovered in Herculaneum.
+"Evening: Seafront Dinner"
+Return to Pompeii and enjoy a relaxing dinner along the seafront.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Naples Archaeological Museum`,
+        dayContent: `
+        "Morning: Naples Archaeological Museum"
+Travel to Naples and visit the Naples National Archaeological Museum.
+View artifacts and frescoes from Pompeii and Herculaneum.
+"Afternoon: Naples Historic Center"
+Explore the historic center of Naples.
+Visit landmarks such as the Cathedral of Naples and the Royal Palace.
+"Evening: Pizza in Naples"
+Conclude your journey with a traditional Neapolitan pizza in the city where pizza originated.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -73,8 +494,77 @@ export const Places: PlacesDataTypes[] = [
     name: 'Matera',
     imageUrl: '',
     country: 'Italy',
-    description:
-      "Matera, sculpted from ancient stone, whispers tales of millennia past. Sunlight bathes Sassi's honeycomb dwellings, ochre and cream hues rippling across rock-hewn streets. Time etched a labyrinthine tapestry, where cave churches like Madonna della Virtù clutch at sun-drenched slopes, their frescoes echoing hymns sung centuries ago.Beneath earth's embrace, whispers of troglodyte lives linger. Casa Grotta whispers of families huddled by hearths, tools whispering of trades passed down through generations. In underground cisterns, cool shadows whisper the secrets of water held captive, nurtured, lifeblood of a city carved from arid earth.Matera, where whispers become song, a symphony of history, resilience, and enduring human spirit, resonating through timeless stone.",
+    description: [
+      {
+        dayHeading: `Day 1: Matera's Sassi District`,
+        dayContent: `
+        "Morning: Sassi Cave Dwellings"
+Begin your visit by exploring the Sassi di Matera, the ancient cave dwellings.
+Visit Casa Grotta di Vico Solitario for an insight into the traditional cave lifestyle.
+"Afternoon: Piazza Vittorio Veneto and Cathedral"
+Stroll through Piazza Vittorio Veneto, the main square.
+Visit the Matera Cathedral (Cattedrale di Matera) and admire the architecture.
+"Evening: Sunset from Belvedere di Murgia Timone"
+Head to Belvedere di Murgia Timone for panoramic views.
+Enjoy the sunset over Matera's unique skyline.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Ancient Ruins and Museums`,
+        dayContent: `
+        "Morning: Crypt of the Original Sin"
+Explore the Crypt of the Original Sin (Cripta del Peccato Originale) with its ancient frescoes.
+Learn about the history of the crypt and its restoration.
+"Afternoon: National Archaeological Museum Domenico Ridola"
+Visit the National Archaeological Museum, Domenico Ridola.
+Discover artifacts from the region's history, including prehistoric and Roman periods.
+"Evening: Dinner in Cave Restaurants"
+Have dinner in one of Matera's cave restaurants, experiencing local cuisine.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Murgia National Park`,
+        dayContent: `
+        "Morning: Full Day Excursion to Murgia National Park"
+Explore Murgia National Park, known for its rugged landscapes and ancient cave dwellings.
+Hike the trails and visit rock churches such as Madonna delle Tre Porte.
+"Afternoon: Visit Rock Churches"
+Explore the Rock Churches of San Nicola dei Greci and Santa Lucia alle Malve.
+Enjoy the natural beauty and cultural heritage of the park.
+"Evening: Matera by Night"
+Return to Matera and experience the city by night.
+Visit local bars and cafes for an evening in the Sassi.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Local Experiences`,
+        dayContent: `
+        "Morning: Artisan Workshops"
+Explore artisan workshops in Matera.
+Visit local craftsmen specializing in ceramics, textiles, and other traditional crafts.
+"Afternoon: Cooking Class"
+Participate in a local cooking class to learn Matera's traditional recipes.
+Enjoy a meal prepared with your newfound culinary skills.
+"Evening: Musical or Theatrical Performance"
+Check if there are any musical or theatrical performances happening in Matera.
+Experience local arts and culture.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Nearby Towns and Cave Churches`,
+        dayContent: `
+        "Morning: Day Trip to Nearby Towns"
+Take a day trip to nearby towns such as Altamura or Gravina in Puglia.
+Explore their historical centers, churches, and local attractions.
+"Afternoon: Gravina di Matera"
+Visit the town of Gravina in Puglia, known for its ravine and Romanesque architecture.
+Explore the Cave Church of San Michele.
+"Evening: Farewell Dinner"
+Return to Matera for a farewell dinner.
+Reflect on your time in this unique and historical city.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 5,
@@ -83,8 +573,50 @@ export const Places: PlacesDataTypes[] = [
     name: 'Daintree Forest',
     imageUrl: '',
     country: 'Australia',
-    description:
-      'In Daintree, time unfurls like ancient ferns, a living tapestry woven 135 million years ago. Emerald canopies filter dappled sunlight, casting verdant spells on moss-carpeted trunks. The air throbs with the symphony of unseen creatures, leaves rustling like whispers amidst the symphony. Crocodiles bask on sun-drenched banks, prehistoric sentinels guarding secrets held by the Daintree River. Cassowaries, flightless giants, stalk the forest floor, their calls echoing through the dense foliage. Luminescent fungi paint the night a surreal blue, while butterflies, kaleidoscopes on wings, flit through sunbeams. Every fallen log, every tangled vine, hums with life, a microcosm of ancient wonder.Daintree, where the world breathes green, a cathedral of nature where sunlight sculpts leaves into stained glass, and the air itself whispers stories older than time. ',
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Mossman Gorge`,
+        dayContent: `
+        "Morning: Arrive in Port Douglas"
+Arrive in Port Douglas, a gateway to the Daintree Rainforest.
+Check into your accommodation and get settled.
+"Afternoon: Mossman Gorge"
+Head to Mossman Gorge for a rainforest walk.
+Take the Ngadiku Dreamtime Walk to learn about indigenous culture and the local ecosystem.
+"Evening: Sunset at Four Mile Beach"
+Relax at Four Mile Beach in Port Douglas.
+Enjoy a sunset picnic or dinner at a beachfront restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Daintree Discovery Centre and Cape Tribulation`,
+        dayContent: `
+        "Morning: Daintree Discovery Centre"
+Explore the Daintree Discovery Centre for an informative introduction to the rainforest.
+Take the Aerial Walkway for stunning views of the canopy.
+"Afternoon: Jungle Surfing Canopy Tour"
+Experience the thrill of ziplining with a Jungle Surfing Canopy Tour.
+Enjoy an exhilarating journey through the treetops.
+"Evening: Dinner in Cape Tribulation"
+Head to Cape Tribulation for dinner.
+Consider dining at a local restaurant with rainforest views.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Daintree River Cruise and Departure`,
+        dayContent: `
+        "Morning: Daintree River Cruise"
+Take a Daintree River cruise to spot crocodiles, birds, and other wildlife.
+Learn about the importance of the river ecosystem.
+"Afternoon: Cape Kimberley and Cow Bay"
+Explore the Cape Kimberley and Cow Bay areas.
+Visit the Alexandra Range Lookout for panoramic views of the Daintree Forest meeting the Great Barrier Reef.
+"Evening: Departure or Rainforest Walk"
+Depending on your departure time, either relax at your accommodation or take a short rainforest walk.
+Depart from Port Douglas
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 3,
@@ -93,8 +625,54 @@ export const Places: PlacesDataTypes[] = [
     name: 'The Great Barrier reef',
     imageUrl: '',
     country: 'Australia',
-    description:
-      "The Great Barrier Reef, a jewel in the azure embrace of the Coral Sea, unveils a kaleidoscope of life beneath sun-kissed waves. Imagine coral cities, vibrant mosaics of technicolor hues, teeming with an electrifying ballet of creatures. Clownfish weave through anemones, their neon stripes a stark contrast to the emerald tentacles. Turtles glide like underwater spaceships, their ancient eyes wise witnesses to a billion stories. Schools of fish shimmer like a living jewel, flashing scales mirroring the sun's descent. Reef sharks patrol the periphery, sleek predators in a delicate dance with life's abundance. Humpback whales breach the surface, giants who sing haunting songs in the watery depths. The Great Barrier Reef, a symphony of scales and fins, an ode to biodiversity where every ripple whispers tales of an ocean brimming with secrets. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Island Exploration`,
+        dayContent: `
+        "Morning: Arrive in Cairns"
+Arrive in Cairns, a popular gateway to the Great Barrier Reef.
+Check into your accommodation and get settled.
+"Afternoon: Green Island"
+Take a half-day trip to Green Island, a coral cay with vibrant marine life.
+Snorkel or take a glass-bottom boat tour to explore the reef.
+Relax on the sandy beaches and enjoy the tropical surroundings.
+"Evening: Cairns Esplanade"
+Return to Cairns in the evening.
+Explore the Cairns Esplanade and enjoy dinner at a waterfront restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Outer Reef Adventure`,
+        dayContent: `
+        "Morning: Full Day Cruise to Outer Reef"
+Choose a pontoon or reef platform offering various activities like snorkeling, diving, and underwater observatories.
+Spend the day snorkeling or diving to explore the diverse marine life and coral formations.
+"Afternoon: Snorkeling and Diving"
+Take part in guided snorkel tours or introductory dives if you're a beginner.
+Marine Biologist Presentation
+Attend a marine biologist presentation on the boat to learn about the reef's ecology and conservation efforts.
+"Evening: Sunset Cruise"
+Consider a sunset cruise to enjoy the colors of the evening over the Coral Sea.
+Return to Cairns for the night
+        `,
+      },
+      {
+        dayHeading: `Day 3: Scenic Flight and Reef Town`,
+        dayContent: `
+        "Morning: Scenic Flight"
+Take a scenic helicopter or seaplane flight over the Great Barrier Reef.
+Enjoy breathtaking aerial views of the coral formations and turquoise waters.
+"Afternoon: Port Douglas"
+Travel to Port Douglas, another gateway to the Great Barrier Reef.
+Explore the town, its marina, and the scenic Four Mile Beach.
+Take an afternoon cruise to Low Isles, a coral cay near Port Douglas.
+Snorkel, relax on the beach, or join a guided reef walk with a marine biologist.
+"Evening: Macrossan Street"
+Explore Macrossan Street in Port Douglas for boutique shopping and dining.
+Enjoy a farewell dinner at one of the local seafood restaurants.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 3,
@@ -103,8 +681,50 @@ export const Places: PlacesDataTypes[] = [
     name: 'Tasmania',
     imageUrl: '',
     country: 'Australia',
-    description:
-      "Tasmania, the emerald heart of Australia, is a symphony of diverse landscapes and untamed wilderness. Imagine rugged mountains cloaked in ancient rainforests, their gnarled branches reaching for the heavens like moss-bearded sentinels. Crystal-clear rivers gurgle through verdant valleys, their icy breath misting the air as they cascade down fern-fringed cliffs.Beneath the canopy, a treasure trove of secrets unfolds. Waddling pademelons munch on ferns, their fluffy forms echoing through the silent woods. Platypus paddle in hidden pools, their bills rippling the water like silent hunters. And in the twilight hours, Tasmanian devils erupt from their dens, raucous spirits weaving fire-orange streaks through the dusk. But Tasmania's melody is not solely one of the wilds. Along sun-drenched coastlines, turquoise waters lap against pristine beaches like Wineglass Bay, its crescent shape embracing the azure ocean. Quaint coastal towns nestle amidst rolling hills, their colonial-era cottages a testament to a rich convict past. In bustling Hobart, artisan cafes and vibrant markets hum with life, their offerings a delicious fusion of fresh seafood and locally grown produce.Tasmania, then, is an island serenade where wilderness whispers ancient tales, history murmurs from cobbled streets, and the sea sings its endless song. It's a place to lose yourself in the embrace of nature, where every rustle of leaves, every crashing wave, and every raucous devil's shriek adds a note to the symphony of a wild and wondrous island.",
+    description: [
+      {
+        dayHeading: `Day 1: Hobart and Surroundings`,
+        dayContent: `
+        "Morning: Explore Hobart"
+Begin your journey in Hobart, the capital city.
+Visit Salamanca Place and explore the vibrant markets (if on a weekend).
+Take a stroll around Battery Point, known for its historic houses.
+"Afternoon: MONA and Mount Wellington"
+Visit the Museum of Old and New Art (MONA), a unique and modern art museum.
+Drive or take a bus to the summit of Mount Wellington for panoramic views of Hobart and the surrounding area.
+"Evening: Waterfront Dinner"
+Enjoy dinner at one of the waterfront restaurants in the historic Sullivan's Cove area.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Port Arthur and Tasman Peninsula`,
+        dayContent: `
+        "Morning: Drive to Port Arthur"
+Drive to the Tasman Peninsula.
+Explore the historic Port Arthur site, a former penal colony.
+"Afternoon: Tasman Arch and Devil's Kitchen"
+Visit natural attractions like Tasman Arch and Devil's Kitchen.
+Take a walk along the coastal trails for breathtaking views of the cliffs and sea.
+"Evening: Wildlife Spotting at Eaglehawk Neck"
+Visit Eaglehawk Neck for a chance to spot Tasmanian devils and other wildlife.
+Consider taking a night tour for nocturnal wildlife encounters.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Cradle Mountain and Wilderness`,
+        dayContent: `
+        "Morning: Drive to Cradle Mountain"
+Drive to Cradle Mountain-Lake St Clair National Park.
+Start your day with a walk around Dove Lake, enjoying views of Cradle Mountain.
+"Afternoon: Enchanted Walk and Waldheim Chalet"
+Take the Enchanted Walk, a short and scenic forest walk.
+Visit Waldheim Chalet to learn about the park's history.
+"Evening: Stargazing and Wilderness Experience"
+If the weather is clear, indulge in some stargazing in the pristine wilderness.
+Consider staying in a wilderness lodge for a unique and immersive experience
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 3,
@@ -113,8 +733,50 @@ export const Places: PlacesDataTypes[] = [
     name: 'Uluru & Kata Tjuta',
     imageUrl: '',
     country: 'Australia',
-    description:
-      "In the heart of Australia's ochre expanse, Uluru and Kata Tjuta rise from the desert like ancient monoliths, their weathered forms bearing the whispers of millennia. Uluru, a hulking sandstone giant, bleeds with the hues of dawn and dusk, its rust-red flanks ablaze under the unforgiving sun. Kata Tjuta, a family of sandstone domes huddled close, casts long shadows across the parched earth, their wrinkled surfaces etched with stories etched by wind and time.These are not mere rocks, but sacred sentinels, dreaming grounds for the Anangu people. Every groove and crevice whispers tales of creation, of ancestral beings and celestial serpents. The wind, a desert bard, carries their stories on its dusty breath, weaving them into the very fabric of the Outback air.As the sun dips below the horizon, Uluru's canvas ignites. Crimson bleeds into gold, then indigo, a celestial masterpiece painted across the vast canvas of the desert sky. Kata Tjuta, cloaked in twilight, becomes a silhouette, a family huddled against the encroaching darkness. In this timeless ballet of light and shadow, Uluru and Kata Tjuta speak volumes without a word, their silence more eloquent than any human tongue.Uluru and Kata Tjuta are more than just landmarks; they are living testaments to the enduring power of nature and the rich tapestry of human stories woven upon its canvas. In their silent embrace, they invite us to listen, to learn, and to respect the ancient wisdom whispered by the desert winds.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Uluru Sunset`,
+        dayContent: `
+        "Morning: Arrival in Ayers Rock Resort"
+Arrive in Ayers Rock Resort and check into your accommodation.
+Get familiar with the surroundings and take in the vastness of the red desert.
+"Afternoon: Uluru Cultural Centre"
+Visit the Uluru-Kata Tjuta Cultural Centre to gain insights into the local Anangu culture.
+Learn about the significance of Uluru and Kata Tjuta to the Indigenous people.
+"Evening: Uluru Sunset Viewing"
+Head to the designated sunset viewing area for a spectacular view of Uluru as it changes colors with the setting sun.
+Enjoy a peaceful evening in the heart of the Outback.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Uluru Base Walk and Field of Light`,
+        dayContent: `
+        "Morning: Uluru Base Walk"
+Start your day with a sunrise viewing of Uluru.
+Embark on the Uluru Base Walk, a 10-kilometer circuit around the rock. Learn about its geology and cultural significance.
+"Afternoon: Maruku Arts Dot Painting Workshop"
+Participate in a dot painting workshop with local artists from Maruku Arts.
+Create your own artwork and gain insights into Indigenous art techniques.
+"Evening: Field of Light"
+Experience the mesmerizing Field of Light, an art installation by Bruce Munro.
+Wander through a field of illuminated stems that change colors as the night falls.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Kata Tjuta and Departure`,
+        dayContent: `
+        "Morning: Kata Tjuta Sunrise"
+Witness the sunrise at Kata Tjuta, a group of large, domed rock formations.
+Choose from various viewing platforms for a breathtaking morning panorama.
+"Afternoon: Valley of the Winds Walk"
+Embark on the Valley of the Winds Walk, a trail that takes you through the domes of Kata Tjuta.
+Enjoy the unique landscapes and stunning views.
+"Evening: Departure"
+Depending on your departure time, spend some relaxing moments reflecting on your experiences.
+Depart from Ayers Rock Resort.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 3,
@@ -123,8 +785,52 @@ export const Places: PlacesDataTypes[] = [
     name: 'Whiteheaven Beach',
     imageUrl: '',
     country: 'Australia',
-    description:
-      "Whitehaven Beach unfolds like a surreal dream on Whitsunday Island, Australia. Imagine seven kilometers of pure magic, where silica sand, the finest in the world, squeaks like whispered secrets beneath your bare feet. Sunlight dances on the water, transforming the ocean into a turquoise tapestry. The shallows shimmer like a million scattered jewels, inviting you to sink into their refreshing embrace. As you wade further, the water stays remarkably cool, thanks to the unique properties of the silica sand. Beyond the shore, Hill Inlet unveils its breathtaking spectacle. Swirling currents sculpt the sand into a mesmerizing dance, creating ever-changing patterns of white and turquoise. It's a natural masterpiece, a living canvas painted by the tides and kissed by the sun. Whitehaven Beach isn't just a paradise for sunbathers and swimmers. Explore the lush rainforest fringing the coast, dotted with ancient trees and buzzing with exotic wildlife. Take a scenic flight to witness the beach's full grandeur from above, or sail along the Whitsunday Islands, feeling the wind whip through your hair and the spray of the ocean on your face.Here, time slows down, worries melt away like ice cream under the sun, and the only sounds are the gentle lap of waves and the whisper of the silica sand. Whitehaven Beach is a treasure, a dream etched in turquoise and pure white, a place where nature whispers its beauty into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival in Airlie Beach`,
+        dayContent: `
+        "Morning: Arrive in Airlie Beach"
+Arrive in Airlie Beach, the gateway to the Whitsunday Islands.
+Check into your accommodation and get oriented with the town.
+"Afternoon: Airlie Beach Lagoon"
+Relax at the Airlie Beach Lagoon, a man-made swimming area with tropical surroundings.
+Stroll along the Airlie Beach Main Street for shopping and dining options.
+"Evening: Sunset Cruise"
+Take a sunset cruise from Airlie Beach to enjoy the stunning views over the Coral Sea.
+Consider a dinner cruise for a memorable evening.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Full-Day Whitehaven Beach Experience`,
+        dayContent: `
+        "Morning: Depart for Whitsunday Islands"
+Embark on a full-day cruise or sailing trip to the Whitsunday Islands.
+Enjoy breakfast on board as you cruise towards Whitehaven Beach.
+Arrive at Whitehaven Beach and spend the late morning exploring the beach.
+Swim in the clear waters, relax on the pristine silica sand, and take in the breathtaking scenery.
+"Afternoon: Hill Inlet Lookout"
+Hike to the Hill Inlet Lookout for panoramic views of Whitehaven Beach and the swirling sands.
+Capture memorable photos of the unique patterns created by the tide.
+"Evening: Return to Airlie Beach"
+Return to Airlie Beach in the late afternoon.
+Have dinner at one of the local restaurants or cafes.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Great Barrier Reef Day Trip`,
+        dayContent: `
+        "Morning: Great Barrier Reef Excursion"
+Embark on a full-day cruise to the Great Barrier Reef from Airlie Beach.
+Snorkel or dive to explore the vibrant underwater world.
+"Afternoon: Reef Activities"
+Participate in guided reef activities such as coral viewing or a semi-submersible tour.
+Enjoy a delicious lunch on board.
+"Evening: Return to Airlie Beach"
+Return to Airlie Beach in the late afternoon.
+Relax or explore Airlie Beach for your final evening.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 3,
@@ -133,8 +839,78 @@ export const Places: PlacesDataTypes[] = [
     name: 'Copacabana Beach',
     imageUrl: '',
     country: 'Brazil',
-    description:
-      "Copacabana Beach, a glittering jewel etched along Rio de Janeiro's vibrant coastline, pulsates with an infectious energy. Imagine two kilometers of golden sand cradled by cerulean waves, a canvas upon which a vibrant tapestry of life unfolds.Sun-kissed bodies sprawl on the warm sand, their laughter mingling with the rhythmic crash of waves. Vendors weave between them, balancing trays of colorful açai bowls and refreshing coconut water. On the shore, colorful umbrellas sprout like exotic flowers, their vibrant hues contrasting with the azure expanse. But Copacabana isn't just about sunbathing and surf. It's a stage where life plays out in a vibrant spectacle. Skater boys carve graceful arcs on the beachfront promenade, their boards flashing in the sun. Capoeira dancers weave their magic in the sand, their fluid movements echoing the rhythm of the sea. And as the sun dips below the horizon, Copacabana transforms into a glittering wonderland. Lights twinkle from beachfront bars and restaurants, the air thrumming with the infectious beat of samba music. Beyond the sun, sand, and surf, Copacabana whispers tales of Rio's rich history. Sugarloaf Mountain, a dramatic sentinel rising from the ocean, was once a pirate lookout. The iconic Copacabana Palace, a glamorous relic of the past, has hosted royalty and celebrities alike.Copacabana Beach is more than just a beach; it's a microcosm of Rio de Janeiro, a vibrant tapestry woven with sun, sand, music, and the infectious spirit of Carioca life. It's a place where worries melt away like ice cream in the sun, and the only rhythm that matters is the one your heart beats to as you dance to the tune of the ocean's endless song.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Beach Relaxation`,
+        dayContent: `
+        "Morning: Arrive in Rio de Janeiro"
+Arrive in Rio de Janeiro and check into your accommodation in the Copacabana area.
+Take some time to settle in and enjoy the views from your accommodation.
+"Afternoon: Copacabana Beach Relaxation"
+Head to Copacabana Beach for an afternoon of relaxation.
+Enjoy the sun, swim in the ocean, and take a leisurely stroll along the iconic boardwalk.
+"Evening: Sunset at Forte de Copacabana"
+Visit Forte de Copacabana for panoramic views of the beach and a beautiful sunset.
+Explore the historic fort and its museum.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Explore Ipanema and Arpoador`,
+        dayContent: `
+        "Morning: Ipanema Beach"
+Spend the morning exploring Ipanema Beach, located adjacent to Copacabana.
+Visit the vibrant Ipanema Market for local crafts and souvenirs.
+"Afternoon: Lunch at Garota de Ipanema"
+Have lunch at Garota de Ipanema, a historic restaurant with ties to the famous bossa nova song.
+Explore the charming streets of Ipanema.
+"Evening: Arpoador Sunset"
+Head to Arpoador, the rocky promontory between Copacabana and Ipanema.
+Watch the sunset over the ocean and experience the nightly applause from locals.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Sugarloaf Mountain and Nightlife`,
+        dayContent: `
+        "Morning: Sugarloaf Mountain"
+Take a morning cable car ride to the summit of Sugarloaf Mountain.
+Enjoy breathtaking views of Rio de Janeiro, Copacabana, and the surrounding landscapes.
+"Afternoon: Beach Time"
+Spend the afternoon relaxing on Copacabana Beach.
+Try beachside vendors for refreshing coconut water or traditional Brazilian snacks.
+"Evening: Copacabana Nightlife"
+Explore the vibrant nightlife of Copacabana.
+Visit local bars, dance clubs, or attend a live music performance.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Christ the Redeemer and Botanical Garden`,
+        dayContent: `
+        "Morning: Christ the Redeemer"
+Take a morning trip to Christ the Redeemer, one of the New Seven Wonders of the World.
+Enjoy panoramic views of the city and coastline.
+"Afternoon: Botanical Garden"
+Visit the Rio de Janeiro Botanical Garden in the afternoon.
+Explore the lush greenery, exotic plants, and the Avenue of Royal Palms.
+"Evening: Dinner at Copacabana"
+Have dinner at a beachfront restaurant in Copacabana.
+Enjoy Brazilian cuisine while listening to the sounds of the ocean.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Favela Tour and Shopping`,
+        dayContent: `
+        "Morning: Favela Tour"
+Take a guided tour of a favela (shantytown) to learn about the local culture and community initiatives.
+Gain a different perspective on Rio's social landscape.
+"Afternoon: Copacabana Shopping"
+Spend the afternoon shopping along the streets of Copacabana.
+Explore local boutiques and pick up souvenirs.
+"Evening: Farewell Dinner"
+Enjoy a farewell dinner at a beachside restaurant, savoring the last moments in Copacabana.
+Reflect on the memories created during your stay.
+        `,
+      },
+    ],
     cost: 65000,
     reviews: 5,
     numOfDaysToStay: 5,
@@ -143,8 +919,77 @@ export const Places: PlacesDataTypes[] = [
     name: 'Iguazu Falls',
     imageUrl: '',
     country: 'Brazil',
-    description:
-      "Iguazu Falls, a thunderous symphony played on the border of Argentina and Brazil, is a spectacle that leaves even the most jaded traveler speechless. Imagine 275 waterfalls cascading over lush cliffs, their combined roar shaking the very earth. Mist hangs in the air like a diaphanous curtain, refracting sunlight into a kaleidoscope of rainbows that dance amidst the spray.The largest of these falls, Garganta del Diablo (Devil's Throat), is a gaping maw swallowing the Iguazu River whole. Its power is both terrifying and mesmerizing, a primal force of nature that demands respect and awe. As you approach the falls, a walkway takes you beneath their cascading might, allowing you to feel the raw power of the water on your skin. But Iguazu Falls is more than just a display of raw power. It's a vibrant ecosystem teeming with life. Toucans with beaks like jewels flit through the rainforest canopy, their calls echoing through the verdant maze. Butterflies, wings painted with impossible colors, dance on the humid air. And beneath the falls, capybaras, the world's largest rodents, bask in the spray, their placid faces belying the chaotic beauty around them. Iguazu Falls is a place where power and beauty collide, where nature flexes its muscles and whispers its secrets in the thunderous roar of the water. It's a place to feel small, to reconnect with the raw energy of the earth, and to be left breathless by the sheer magnificence of the world around us.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival in Puerto Iguazu`,
+        dayContent: `
+        "Morning: Arrive in Puerto Iguazu"
+Arrive in Puerto Iguazu, the gateway to Iguazu Falls.
+Check into your accommodation and take some time to rest.
+"Afternoon: Explore Puerto Iguazu"
+Explore the town of Puerto Iguazu.
+Visit the Three Borders Landmark to see the meeting point of Argentina, Brazil, and Paraguay.
+"Evening: Sunset at Hito Tres Fronteras"
+Witness the sunset at Hito Tres Fronteras for stunning views over the Iguazu and Paraná rivers.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Argentine Side of Iguazu Falls`,
+        dayContent: `
+        "Morning: Visit Iguazu Falls National Park (Argentina)"
+Spend the day exploring the Argentine side of Iguazu Falls.
+Take the train to Devil's Throat, one of the most impressive sections of the falls.
+"Afternoon: Upper and Lower Circuits"
+Explore the Upper Circuit and Lower Circuit trails for different perspectives of the falls.
+Enjoy the lush rainforest surroundings and diverse wildlife.
+"Evening: Dinner in Puerto Iguazu"
+Return to Puerto Iguazu for a relaxing evening.
+Have dinner at a local restaurant to savor Argentine cuisine.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Brazilian Side of Iguazu Falls`,
+        dayContent: `
+        "Morning: Cross to Foz do Iguaçu (Brazil)"
+Cross the border to Foz do Iguaçu in Brazil.
+Visit the Brazilian side of Iguazu Falls for panoramic views.
+"Afternoon: Explore the Brazilian Park"
+Walk along the panoramic walkways for breathtaking views of the falls.
+Visit the Bird Park to see a variety of exotic bird species.
+"Evening: Brazilian Cuisine"
+Enjoy dinner at a Brazilian restaurant in Foz do Iguaçu.
+Sample local dishes and relax after a day of exploration.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Adventure Activities and Itaipu Dam`,
+        dayContent: `
+        "Morning: Adventure Activities"
+Choose from adventure activities like a boat ride to the base of the falls or a helicopter tour.
+Experience the falls from different angles for an adrenaline rush.
+"Afternoon: Itaipu Dam"
+Visit the Itaipu Dam, one of the largest hydroelectric dams in the world.
+Take a guided tour to learn about its construction and significance.
+"Evening: Sunset at Itaipu Dam"
+Experience the sunset at the Itaipu Dam.
+Consider taking a special sunset tour for a memorable experience.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Free Day and Departure`,
+        dayContent: `
+        "Morning: Free Time"
+Spend your last morning in Puerto Iguazu at your leisure.
+Explore any additional sites or relax before departure.
+"Afternoon: Souvenir Shopping"
+Shop for souvenirs and local crafts in Puerto Iguazu.
+Pick up some mementos to remember your time at Iguazu Falls.
+"Evening: Departure"
+Depending on your flight schedule, enjoy a final dinner in Puerto Iguazu.
+Depart for your next destination.
+        `,
+      },
+    ],
     cost: 65000,
     reviews: 5,
     numOfDaysToStay: 5,
@@ -153,8 +998,78 @@ export const Places: PlacesDataTypes[] = [
     name: 'Sugarloaf Mountain',
     imageUrl: '',
     country: 'Brazil',
-    description:
-      "Sugarloaf Mountain, a dramatic sentinel rising from the azure embrace of the Atlantic, is more than just a Rio de Janeiro landmark. It's an emerald jewel, a verdant paradise cloaked in rainforest and crowned by iconic cable car lines. Imagine granite peaks piercing the sky, their lush slopes cascading down to meet the ocean in a vibrant display of green and blue. From atop Sugarloaf, the world unfolds like a breathtaking panorama. The sprawling tapestry of Rio stretches beneath you, Copacabana Beach glinting like a golden crescent, Christ the Redeemer's outstretched arms embracing the city. The ocean shimmers in endless shades of turquoise, while islands dot the horizon like scattered emeralds. But Sugarloaf isn't just a breathtaking viewpoint. It's a playground for adventure seekers and nature lovers alike. Hike through the lush rainforest, following winding trails that weave past waterfalls and ancient trees. Climb the granite face of the mountain, feeling the adrenaline rush as you scale the challenging rock face. Or simply relax on the beach at Praia Vermelha, the waves lapping gently against the shore as you soak in the iconic vista. As the sun dips below the horizon, Sugarloaf transforms into a fiery spectacle. The granite peaks blush with shades of orange and pink, the sky ablaze with a mesmerizing sunset. The city lights twinkle like scattered diamonds, and the cable cars ascend and descend, weaving trails of light against the darkening sky.Sugarloaf Mountain whispers tales of pirates and explorers, of emperors and revolutionaries. It's a symbol of Rio's resilience, its beauty, and its vibrant spirit. Whether you're an adrenaline junkie or a sun seeker, Sugarloaf has something for everyone. It's a place to lose yourself in the embrace of nature, to capture breathtaking memories, and to feel the rhythm of Rio's heart beat beneath your feet.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival in Rio de Janeiro`,
+        dayContent: `
+        "Morning: Arrive in Rio de Janeiro"
+Arrive in Rio de Janeiro and check into your accommodation in the Copacabana or Ipanema areas.
+Get acclimated to the surroundings and enjoy a relaxing morning.
+"Afternoon: Copacabana Beach"
+Spend the afternoon relaxing on Copacabana Beach.
+Take a leisurely stroll along the iconic Copacabana boardwalk.
+"Evening: Dinner in Ipanema"
+Have dinner at a beachside restaurant in Ipanema.
+Enjoy Brazilian cuisine while experiencing the vibrant atmosphere of Rio's nightlife.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Sugarloaf Sunset Experience`,
+        dayContent: `
+        "Morning: Explore Ipanema"
+Explore the Ipanema neighborhood, its boutiques, and lively streets.
+Visit the iconic "Girl from Ipanema" street.
+"Afternoon: Sugarloaf Mountain"
+Take a cable car ride to the summit of Sugarloaf Mountain.
+Enjoy the breathtaking views of Rio de Janeiro and its landmarks.
+"Evening: Sunset at Sugarloaf"
+Stay at Sugarloaf to witness the sunset over Rio.
+Capture the city lights coming to life as the sun sets.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Historical Rio and Santa Teresa`,
+        dayContent: `
+        "Morning: Christ the Redeemer"
+Visit Christ the Redeemer, another iconic Rio landmark.
+Take the train or hike to the top for panoramic views.
+"Afternoon: Lunch in Santa Teresa"
+Explore the historic Santa Teresa neighborhood.
+Have lunch at one of the charming restaurants in Santa Teresa.
+"Evening: Selarón Steps"
+Visit the Selarón Steps, a vibrant mosaic staircase connecting Santa Teresa to the neighborhoods below.
+Explore the nearby neighborhoods and enjoy a relaxing evening.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Beach Day and Botanical Garden`,
+        dayContent: `
+        "Morning: Botanical Garden"
+Visit the Rio de Janeiro Botanical Garden.
+Explore the lush greenery, exotic plants, and the Avenue of Royal Palms.
+"Afternoon: Beach Day"
+Spend the afternoon at the beach, either Copacabana or Ipanema.
+Try beachside vendors for refreshing coconut water or traditional Brazilian snacks.
+"Evening: Dinner in Leblon"
+Have dinner in the upscale neighborhood of Leblon.
+Enjoy a sophisticated dining experience in one of the local restaurants.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Tijuca National Park and Farewell`,
+        dayContent: `
+        "Morning: Tijuca National Park"
+Explore Tijuca National Park, the largest urban rainforest in the world.
+Hike to Pico da Tijuca, the highest peak, or visit the Cascatinha Waterfall.
+"Afternoon: Farewell in Rio"
+Spend your last afternoon in Rio at leisure.
+Reflect on your experiences and pick up any last-minute souvenirs.
+"Evening: Farewell Dinner"
+Enjoy a farewell dinner in Copacabana or Ipanema.
+Savor the flavors of Brazilian cuisine one last time.
+        `,
+      },
+    ],
     cost: 65000,
     reviews: 5,
     numOfDaysToStay: 5,
@@ -163,8 +1078,50 @@ export const Places: PlacesDataTypes[] = [
     name: ' Lake balaton',
     imageUrl: '',
     country: 'Hungary',
-    description:
-      "Lake Balaton, nestled in the heart of Hungary, is not just the largest lake in Central Europe, but a sun-kissed gem that sparkles with a thousand delights. Imagine a shimmering expanse of cerulean water, stretching for 77 kilometers like a sapphire ribbon across the Hungarian plains. Rolling hills adorned with vineyards border the southern shore, while the north boasts volcanic peaks and charming hamlets. Balaton's shores cater to every sun-seeker's dream. Golden sands on the southern coast invite lazy days spent soaking up the rays and splashing in the shallow waves. Windsurfers dance across the water, their sails billowing like colorful kites against the azure sky. Quaint towns like Siófok and Keszthely hum with lively bars and bustling markets, offering a taste of Hungarian culture and delicious local fare. But Balaton whispers of more than just sun and sand. Explore the historic peninsula of Tihany, crowned by a Benedictine Abbey and boasting breathtaking panoramas. Kayak through the reeds of Kis-Balaton, a protected wetland teeming with birdlife. Cycle along the scenic trails that hug the shoreline, the gentle breeze carrying the scent of lavender and wildflowers. As the sun dips below the horizon, painting the sky in fiery hues, Balaton transforms into a canvas of twinkling lights. Cozy restaurants nestled along the shore beckon with the promise of fresh fish and fragrant goulash. Live music spills from open-air terraces, blending with the gentle clinking of glasses and laughter. Balaton is a place where time slows down, where worries melt away like ice cream under the summer sun. It's a symphony of nature's beauty, cultural charm, and vibrant Hungarian spirit. It's a place to lose yourself in the embrace of the lake, to create memories that will forever shimmer like gold dust in the warm Hungarian air. So, whether you're seeking lazy days on the beach, active adventures, or a taste of authentic Hungarian culture, Lake Balaton awaits, ready to weave its magic around your heart. Come, dip your toes in its cool waters, and let Balaton whisper its enchanting stories into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival in Siófok`,
+        dayContent: `
+        "Morning: Arrive in Siófok"
+Start your journey by arriving in Siófok, known as the "Capital of Balaton."
+Check into your accommodation and take a moment to enjoy the lakeside views.
+"Afternoon: Siófok Promenade and Beach"
+Explore Siófok's lively promenade along the lake.
+Relax on Siófok Beach and take a dip in Lake Balaton.
+"Evening: Dinner at a Lakeside Restaurant"
+Have dinner at a lakeside restaurant, enjoying Hungarian cuisine.
+Stroll along the illuminated promenade in the evening.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Tihany and Balatonfüred`,
+        dayContent: `
+        "Morning: Visit Tihany"
+Drive or take a boat to Tihany Peninsula.
+Explore the Tihany Abbey and enjoy panoramic views of the lake from the Tihany Echo.
+"Afternoon: Balatonfüred"
+Head to Balatonfüred, a charming town with a historic lakeside promenade.
+Visit the Anna Ballroom and stroll through the Tagore Promenade.
+"Evening: Sunset at Tagore Promenade"
+Enjoy the sunset over Lake Balaton from Tagore Promenade.
+Have dinner at a local restaurant in Balatonfüred.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Hévíz and Departure`,
+        dayContent: `
+        "Morning: Relax at Hévíz Thermal Lake"
+Drive to Hévíz and visit the Hévíz Thermal Lake, the largest thermal lake in the world.
+Relax in the warm, healing waters surrounded by water lilies.
+"Afternoon: Explore Keszthely"
+Visit Keszthely, a town with a rich history and the Festetics Palace.
+Explore the palace and its gardens.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a local restaurant in Keszthely.
+Reflect on your Lake Balaton experience.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -173,8 +1130,55 @@ export const Places: PlacesDataTypes[] = [
     name: 'Budapest',
     imageUrl: '',
     country: 'Hungary',
-    description:
-      "Budapest, the 'Pearl of the Danube,' is a city where history whispers from grand boulevards and ancient bridges, its architecture a symphony of Baroque elegance and Soviet grit. Imagine the Danube River, a shimmering ribbon bisecting the city, its waters reflecting the twin cities of Buda and Pest, forever united in a breathtaking embrace. Buda, perched on Castle Hill, whispers tales of medieval kings and Ottoman sultans. The majestic Buda Castle, crowned by the Fisherman's Bastion, overlooks the city, its turrets and spires reaching for the sky. The Matthias Church, adorned with intricate stained glass, echoes with centuries of hymns and royal coronations. Across the Danube, Pest thrums with the vibrancy of modern life. St. Stephen's Basilica, a neoclassical masterpiece, pierces the skyline, its golden dome a beacon of hope. Chain Bridge, adorned with lion statues, links the two cities, its arches framing the river's glittering flow. And the Hungarian Parliament Building, a majestic neo-Gothic palace, stands sentinel on the Pest embankment, its lights aglow against the twilight sky. But Budapest is more than just a feast for the eyes. Delve into bustling Central Market, its stalls overflowing with paprika, salami, and colorful handicrafts. Sample goulash and langos in cozy cafes bathed in warm sunshine. Take a dip in the Szechenyi Baths, the largest thermal spa in Europe, its steaming waters melting away any lingering stress. As the sun dips below the horizon, painting the sky in fiery hues, Budapest transforms into a city of twinkling lights. Cruise along the Danube, the city unfolding like a fairytale illuminated against the night sky. Sip Hungarian wine on rooftop terraces, the cityscape shimmering below, a tapestry woven from centuries of stories. Budapest is a city that dances to the rhythm of the Danube, its heart beating with the passion of history and the vibrancy of modern life. It's a place where romance whispers from cobbled streets and laughter spills from grand cafes. It's a place to lose yourself in the embrace of the city, to create memories that will forever shimmer like golden lights along the Danube's sparkling path. So, pack your bags, wander its streets, and let Budapest whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Buda Castle District and Danube River`,
+        dayContent: `
+        "Morning: Buda Castle and Matthias Church"
+Start your day exploring the Buda Castle District.
+Visit Buda Castle and enjoy panoramic views of the city from Fisherman's Bastion.
+Explore Matthias Church, known for its Gothic architecture.
+"Afternoon: Lunch in Castle District"
+Have lunch at a local restaurant in the Castle District.
+Explore the charming streets and take in the historical ambiance.
+Take the Castle Hill Funicular down to the Danube River.
+Stroll along the Danube Promenade and enjoy the view of the iconic Parliament Building.
+"Evening: Dinner Cruise on the Danube"
+Experience Budapest's landmarks illuminated at night on a dinner cruise along the Danube.
+Enjoy a relaxing evening with a delicious dinner.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Pest Side and Thermal Baths`,
+        dayContent: `
+        "Morning: Heroes' Square and City Park"
+Visit Heroes' Square, a symbolic square with statues representing Hungarian historical figures.
+Explore City Park and visit Vajdahunyad Castle.
+"Afternoon: Széchenyi Thermal Bath"
+Relax in the famous Széchenyi Thermal Bath in City Park.
+Enjoy the thermal pools and the unique architecture of the bath complex.
+"Evening: Dinner in the Jewish Quarter"
+Head to the Jewish Quarter for dinner.
+Explore the vibrant nightlife and trendy ruin pubs in the area.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Parliament, Margaret Island, and Gellért Hill`,
+        dayContent: `
+        "Morning: Hungarian Parliament Building"
+Take a guided tour of the Hungarian Parliament Building.
+Admire the grand architecture and learn about Hungary's history.
+"Afternoon: Margaret Island"
+Spend the afternoon on Margaret Island in the middle of the Danube.
+Enjoy the gardens, musical fountain, and the relaxing atmosphere.
+Hike or take a bus to the top of Gellért Hill.
+Visit the Citadella for panoramic views of Budapest.
+"Evening: Farewell Dinner in Pest"
+Have a farewell dinner at a restaurant in Pest.
+Consider enjoying traditional Hungarian cuisine.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -183,8 +1187,54 @@ export const Places: PlacesDataTypes[] = [
     name: 'Komodo National Park',
     imageUrl: '',
     country: 'Indonesia',
-    description:
-      "Komodo National Park, an emerald archipelago sprinkled across the azure expanse of Indonesia, is not just a national park, but a prehistoric realm where Komodo dragons, the largest lizards on Earth, stalk the volcanic hills. Imagine rugged islands cloaked in emerald forests, fringed by pristine beaches lapped by turquoise waters, and patrolled by these living reminders of a bygone era. Komodo dragons, with their forked tongues and serrated teeth, may resemble mythical beasts, but their reign is real. Witnessing these ancient predators lumbering through the undergrowth, their primeval power oozing from every scale, is an experience that sends shivers down the spine and ignites the imagination. But Komodo is more than just its reptilian overlords. Dive into vibrant coral reefs teeming with kaleidoscopic marine life, from graceful manta rays to clownfish darting amongst anemones. Hike through verdant forests echoing with the calls of exotic birds, their plumage as vibrant as the wildflowers carpeting the forest floor. Snorkel alongside sea turtles gliding through underwater meadows, their wise eyes holding the secrets of the deep. As the sun dips below the horizon, painting the sky in fiery hues, Komodo transforms into a canvas of twinkling stars reflected on the still waters. Gather around crackling campfires, sharing stories under the Milky Way's embrace, the gentle lapping of waves providing the soundtrack to your adventure. Komodo National Park is a place where time slows down, where adrenaline-pumping encounters with nature's giants mingle with serene moments of tranquility. It's a place to lose yourself in the embrace of a lost world, to feel the primal thrill of adventure, and to discover the delicate balance between awe-inspiring power and breathtaking beauty. So, pack your bags, set sail for Komodo, and let the whispers of dragons and the symphony of nature guide you on an unforgettable journey.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Rinca Island`,
+        dayContent: `
+        "Morning: Arrival in Labuan Bajo"
+Arrive in Labuan Bajo, the gateway to Komodo National Park.
+Check into your accommodation and take a moment to relax.
+"Afternoon: Boat to Rinca Island"
+Take a boat trip to Rinca Island, one of the main islands in Komodo National Park.
+Go on a guided trek to spot Komodo dragons in their natural habitat.
+Explore the island's diverse flora and fauna.
+"Evening: Sunset at Kalong Island"
+Cruise to Kalong Island to witness the spectacular sight of thousands of flying foxes (fruit bats) during sunset.
+Return to Labuan Bajo for dinner.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Komodo Island and Pink Beach`,
+        dayContent: `
+        "Morning: Komodo Island"
+Embark on a boat journey to Komodo Island, the largest island in the national park.
+Trek with a guide to observe Komodo dragons and other wildlife.
+Visit the Komodo Village to learn about the local community.
+"Afternoon: Snorkeling at Pink Beach"
+Head to Pink Beach for snorkeling in the clear turquoise waters.
+Enjoy the vibrant coral reefs and diverse marine life.
+Relax on the unique pink-colored beach.
+"Evening: Dinner on the Boat"
+Have dinner on the boat while enjoying the tranquil surroundings.
+Stargazing on the boat deck can be a memorable experience.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Padar Island and Manta Point`,
+        dayContent: `
+        "Morning: Padar Island"
+Visit Padar Island for a hike to the viewpoint, offering panoramic vistas of three different-colored beaches.
+Capture stunning photos of the landscapes.
+"Afternoon: Manta Point"
+Explore Manta Point for the chance to snorkel or dive with majestic manta rays.
+Witness these graceful creatures in their natural habitat.
+Enjoy additional snorkeling at nearby coral reefs.
+"Evening: Return to Labuan Bajo"
+Return to Labuan Bajo in the late afternoon.
+Spend your last evening exploring Labuan Bajo or relaxing by the waterfront.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -193,8 +1243,51 @@ export const Places: PlacesDataTypes[] = [
     name: 'Raja Ampat West Papua',
     imageUrl: '',
     country: 'Indonesia',
-    description:
-      "Raja Ampat, nestled in the Raja Ampat Regency of West Papua, Indonesia, isn't just an archipelago; it's a breathtaking constellation of emerald islands scattered across a sapphire sea. Imagine limestone karsts rising like dramatic teeth from the turquoise expanse, cloaked in verdant rainforests that tumble down to meet pristine beaches. Dive beneath the waves, and Raja Ampat transforms into a kaleidoscope of life. Coral reefs, pulsating with a thousand vibrant hues, shimmer like underwater cities teeming with exotic creatures. Gentle giants like manta rays glide through sun-dappled waters, while schools of fish flash like living jewels against the cerulean backdrop. This is the heart of the Coral Triangle, the epicenter of global marine biodiversity, a symphony of life played out in every coral crevice and sandy grotto. But Raja Ampat whispers tales above the water's surface too. Explore hidden lagoons on kayaks, their mirrored surfaces reflecting the emerald tapestry of the surrounding jungle. Hike through ancient forests where towering trees hold the secrets of centuries, their branches echoing with the calls of exotic birds. Paddle through traditional Papuan villages, their colorful houses perched on stilts, a testament to the enduring spirit of the indigenous people. As the sun dips below the horizon, painting the sky in fiery hues, Raja Ampat transforms into a canvas of twinkling stars reflected on the still waters. Gather around crackling bonfires on secluded beaches, sharing stories under the Milky Way's embrace, the gentle lapping of waves providing the soundtrack to your adventure. Raja Ampat is a place where time slows down, where worries melt away like ice cream under the equatorial sun. It's a place to lose yourself in the embrace of a pristine paradise, to feel the thrill of diving into vibrant underwater worlds, and to discover the rich tapestry of human and natural beauty that thrives in this remote corner of Indonesia. So, pack your bags, set sail for Raja Ampat, and let the whispers of the emerald isles and the sapphire seas guide you on an unforgettable journey. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Fam Islands`,
+        dayContent: `
+        "Morning: Arrival in Sorong"
+Arrive in Sorong, the gateway to Raja Ampat.
+Transfer to your accommodation and take some time to rest.
+"Afternoon: Boat to Fam Islands"
+Board a boat to the picturesque Fam Islands.
+Snorkel or dive in the crystal-clear waters, exploring the vibrant coral reefs.
+Enjoy the breathtaking scenery and white sandy beaches.
+"Evening: Sunset at Fam Islands"
+Witness the sunset from a viewpoint on the Fam Islands.
+Return to your accommodation for a relaxing evening.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Wayag Islands`,
+        dayContent: `
+        "Morning: Boat to Wayag Islands"
+Embark on a boat journey to the iconic Wayag Islands, known for their dramatic karst limestone formations.
+Hike to the panoramic viewpoints for unparalleled views of the turquoise lagoons and islands.
+"Afternoon: Snorkeling in Wayag"
+Snorkel in the vibrant coral gardens surrounding Wayag.
+Explore hidden lagoons and underwater caves.
+"Evening: Beachside Dinner"
+Enjoy a beachside dinner on one of the Wayag Islands.
+Relax under the stars and take in the serenity of this remote paradise.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Piaynemo and Yeben Islands`,
+        dayContent: `
+        "Morning: Piaynemo Viewpoint"
+Visit Piaynemo, another breathtaking viewpoint in Raja Ampat.
+Hike to the top for a panoramic view of the mushroom-shaped islands and vibrant blue waters.
+"Afternoon: Yeben Islands"
+Explore the Yeben Islands, known for their diverse marine life.
+Snorkel or dive in the coral-rich areas and encounter various species of fish and marine creatures.
+"Evening: Farewell Sunset"
+Enjoy a farewell sunset from a scenic spot in Raja Ampat.
+Reflect on your incredible experiences in this natural paradise.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -203,8 +1296,50 @@ export const Places: PlacesDataTypes[] = [
     name: 'Gili Islands',
     imageUrl: '',
     country: 'Indonesia',
-    description:
-      "The Gili Islands, a trio of palm-fringed gems nestled in the azure embrace of Indonesia's Lombok Strait, whisper promises of barefoot bliss and sun-kissed adventures. Imagine powdery white sand beaches lapped by gently turquoise waves, swaying coconut palms casting dappled shade on hammocks strung between them. Gili Trawangan, the largest and liveliest of the three, thrums with a laid-back vibe. Surfers carve graceful arcs on the waves, their boards flashing in the sun. Beachside bars spill onto the sand, pulsating with reggae beats and infectious laughter. Dive shops line the main street, their windows promising glimpses of a vibrant underwater world teeming with tropical wonders. But Gili Meno, the smallest and most serene, beckons those seeking tranquility. Snorkel alongside graceful sea turtles in crystal-clear waters, their ancient eyes holding the secrets of the deep. Wander through hidden coconut groves, the air thick with the sweet scent of ripening fruit. Cycle along palm-lined paths, the gentle breeze carrying the whispers of paradise in its warm embrace. And Gili Air, the middle child, strikes a perfect balance between the two. Explore quaint fishing villages where colorful boats bob gently on the waves, their nets heavy with the day's bounty. Kayak through hidden mangrove forests, their tangled roots providing a haven for exotic birds and playful mudskippers. Indulge in fresh seafood feasts on beachfront restaurants, the setting sun painting the sky in fiery hues. As twilight descends, the Gili Islands transform into a canvas of twinkling stars reflected on the still waters. Gather around crackling bonfires on secluded beaches, sharing stories under the Milky Way's embrace, the gentle lapping of waves providing the soundtrack to your adventure. The Gili Islands are more than just a beach escape; they're a sensory symphony of turquoise waters, powdery sand, and swaying palms. They're a place to lose yourself in the rhythm of island life, to reconnect with nature's beauty, and to create memories that will forever shimmer like golden dust on the warm Indonesian breeze. So, pack your bags, hop on a boat, and let the Gili Islands whisper their enchanting stories into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Gili Trawangan`,
+        dayContent: `
+        "Morning: Arrival in Gili Trawangan"
+Arrive on Gili Trawangan, the largest of the three Gili Islands.
+Check into your accommodation and drop off your luggage.
+"Afternoon: Beach Time"
+Spend the afternoon relaxing on the beaches of Gili Trawangan.
+Enjoy the white sandy shores and turquoise waters.
+"Evening: Sunset at Sunset Point"
+Head to Sunset Point for a stunning view of the sunset.
+Explore the lively night market and choose from various dining options.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Snorkeling and Cycling`,
+        dayContent: `
+        "Morning: Snorkeling Trip"
+Join a morning snorkeling trip around the Gili Islands.
+Explore underwater wonders, including coral gardens and vibrant marine life.
+"Afternoon: Bike around Gili Trawangan"
+Rent a bicycle and explore the car-free island at your own pace.
+Visit local shops, beach bars, and cafes.
+"Evening: Nightlife in Gili Trawangan"
+Experience the vibrant nightlife of Gili Trawangan.
+Attend a beach party or relax in one of the beachfront bars
+        `,
+      },
+      {
+        dayHeading: `Day 3: Gili Air and Water Activities`,
+        dayContent: `
+        "Morning: Boat to Gili Air"
+Take a boat to Gili Air, a more laid-back island.
+Explore the local villages and enjoy the relaxed atmosphere.
+"Afternoon: Kayaking or Paddleboarding"
+Engage in water activities such as kayaking or paddleboarding.
+Relax on the quieter beaches of Gili Air.
+"Evening: Dinner by the Beach"
+Have dinner at a beachfront restaurant on Gili Air.
+Enjoy fresh seafood and the tranquil ambiance.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -213,8 +1348,61 @@ export const Places: PlacesDataTypes[] = [
     name: 'Ubud',
     imageUrl: '',
     country: 'Indonesia',
-    description:
-      "Ubud, nestled in the verdant heart of Bali, whispers tales of ancient traditions and artistic spirit. Imagine emerald rice paddies swaying in the breeze, their intricate terraces shimmering like green mosaics under the sun. Lush rainforests cloaked in mist cling to volcanic slopes, their moss-draped branches cradling hidden waterfalls and echoing with the calls of exotic birds. Ubud's soul beats with the rhythm of Balinese culture. Wander through charming villages where centuries-old temples guard timeworn traditions. Witness intricate Kecak dances performed under flickering flames, the hypnotic chants and firelight weaving a spellbinding spectacle. Delve into art galleries overflowing with vibrant paintings and intricate wood carvings, each piece a testament to the island's creative spirit. Beyond the temples and galleries, Ubud offers an adventurer's playground. Hike through verdant valleys where hidden waterfalls tumble into turquoise pools, their cool spray a welcome respite from the tropical heat. Cycle through charming villages, the scent of frangipani and spices filling the air, and encounter friendly smiles around every bend. As the sun dips below the horizon, painting the sky in fiery hues, Ubud transforms into a canvas of twinkling lights. Sample traditional Balinese cuisine in candlelit restaurants, the gentle clinking of gamelan music providing the soundtrack to your feast. Seek solace in yoga studios bathed in the golden glow of sunset, finding peace and serenity amidst the island's embrace. Ubud is more than just a beautiful destination; it's an invitation to slow down, to connect with nature and culture, and to discover the beauty that lies within. It's a place where rice paddies whisper secrets in the breeze, where ancient temples speak of timeless traditions, and where the artistic spirit of Bali flourishes in every corner. So, pack your bags, wander its cobbled streets, and let Ubud whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Cultural Exploration`,
+        dayContent: `
+        "Morning: Campuhan Ridge Walk"
+Start your day with a peaceful walk along the Campuhan Ridge.
+Enjoy panoramic views of the lush rice terraces and surrounding countryside.
+Visit the Ubud Monkey Forest, a sanctuary and temple complex with playful macaques.
+Explore the lush forest and admire ancient temple structures.
+"Afternoon: Lunch at a Local Warung"
+Have lunch at a local warung (traditional eatery) to savor authentic Balinese flavors.
+Visit the Tegalalang Rice Terraces, known for their stunning green landscapes.
+Take a stroll through the terraces and capture scenic photos.
+"Evening: Dinner in Ubud Center"
+Head to the central area of Ubud for dinner.
+Explore the vibrant streets, art markets, and choose from a variety of restaurants.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Arts and Wellness`,
+        dayContent: `
+        "Morning: Visit Ubud Palace"
+Explore Ubud Palace (Puri Saren Agung), known for its traditional Balinese architecture.
+Witness traditional dance performances in the adjacent courtyard.
+Stroll through the Ubud Art Market for local crafts, textiles, and souvenirs.
+Bargain with local artisans for unique items.
+"Afternoon: Balinese Cooking Class"
+Join a Balinese cooking class to learn the art of traditional Balinese cuisine.
+Enjoy the fruits of your labor for lunch.
+Pamper yourself with a traditional Balinese spa treatment.
+Relax and rejuvenate with a massage in a serene setting.
+"Evening: Dinner at a Garden Restaurant"
+Have dinner at a garden restaurant surrounded by lush greenery.
+Experience the tranquil ambiance of Ubud at night.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Nature and Yoga`,
+        dayContent: `
+        "Morning: Visit Goa Gajah"
+Explore Goa Gajah (Elephant Cave), an ancient archaeological site.
+Marvel at the stone carvings and bathing pools.
+Join a cycling tour through the picturesque Ubud countryside.
+Ride through rice paddies, traditional villages, and lush landscapes.
+"Afternoon: Yoga Class"
+Experience a yoga class in one of Ubud's renowned yoga studios.
+Reconnect with your mind and body in a serene environment.
+Enjoy a healthy lunch at one of Ubud's health-focused cafes.
+Sample fresh juices, salads, and organic dishes.
+"Evening: Campuhan Ridge Sunset"
+Conclude your trip with a sunset walk along the Campuhan Ridge.
+Reflect on your Ubud experience with the sun setting over the lush landscapes.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -223,8 +1411,62 @@ export const Places: PlacesDataTypes[] = [
     name: 'Yogyakarta',
     imageUrl: '',
     country: 'Indonesia',
-    description:
-      "Yogyakarta, the cultural heart of Indonesia, pulsates with the whispers of ancient empires and the rhythmic beat of batik-clad artistry. Imagine towering volcanoes guarding a vibrant city cloaked in the fragrance of jasmine; where moss-kissed temples whisper tales of Hindu kings and batik workshops paint canvases with vibrant life. Borobudur, a masterpiece in stone, rises from the verdant plain, its intricate reliefs unfolding Buddhist wisdom in every carved panel. Prambanan, a Hindu hymn etched in volcanic rock, pierces the sky, its soaring spires mirroring the ambitions of bygone monarchs. Within Yogyakarta's royal palace, Keraton Ngayogyakarta Hadiningrat, gilded gamelan music echoes through centuries-old courtyards, a testament to the city's enduring heritage. But Yogyakarta is more than just a museum of the past. Explore bustling Malioboro street, a vibrant artery thrumming with the energy of batik vendors, street performers, and ancient angklung orchestras. Wander through batik workshops, witnessing the meticulous art of transforming plain cloth into vibrant masterpieces, each pattern a story waiting to be told. As the sun dips below Mount Merapi, bathing the city in fiery hues, Yogyakarta transforms into a tapestry of twinkling lights. Sample steaming bowls of gudeg in cozy cafes, the rich jackfruit stew warming your soul even as the sky cools. Watch Ramayana shadow puppets dance on flickering screens, their intricate silhouettes narrating epic tales under the starry sky. Yogyakarta is a place where history and modernity intertwine, where ancient whispers linger in every temple and vibrant batik patterns come alive on bustling streets. It's an invitation to lose yourself in the city's embrace, to discover the beauty of both timeworn traditions and contemporary artistry, and to create memories that will forever shimmer like the hand-painted patterns on a silk batik cloth. So, pack your bags, wander its alleys and temples, and let Yogyakarta whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Heritage and Temples`,
+        dayContent: `
+        "Morning: Sultan's Palace (Kraton)"
+Start your day at the Kraton, the Sultan's Palace, to learn about the Javanese royal history and culture.
+Explore the palace grounds, including the Taman Sari Water Castle.
+Visit Tamansari, the royal garden and bathing complex.
+Explore the historical site and its unique architecture.
+"Afternoon: Lunch in Malioboro"
+Head to Malioboro Street for lunch, known for its vibrant street life and shopping.
+Try local specialties at one of the street-side eateries.
+Visit Prambanan Temple, a UNESCO World Heritage Site known for its intricate Hindu architecture.
+Explore the temples dedicated to Brahma, Vishnu, and Shiva.
+"Evening: Ramayana Ballet"
+Attend the Ramayana Ballet performance at Prambanan.
+Enjoy this traditional Javanese dance drama against the backdrop of the temple.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Borobudur and Traditional Arts`,
+        dayContent: `
+        "Morning: Borobudur Sunrise"
+Rise early for a sunrise visit to Borobudur, the largest Buddhist temple in the world.
+Witness the stunning sunrise over the temple and surrounding landscapes.
+Explore the different levels and galleries of Borobudur.
+Learn about the historical and cultural significance of this ancient monument.
+"Afternoon: Visit Mendut and Pawon Temples"
+Visit Mendut and Pawon, two smaller temples near Borobudur.
+Explore the intricacies of these temples and their historical context.
+Participate in a traditional batik workshop to create your own batik fabric.
+Learn about the artistry and cultural importance of batik.
+"Evening: Dinner in Prawirotaman"
+Have dinner in the Prawirotaman area, known for its cozy cafes and restaurants.
+Explore the vibrant nightlife in this part of Yogyakarta.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Arts and Culinary Delights`,
+        dayContent: `
+        "Morning: Visit Kotagede"
+Explore Kotagede, the historical district of Yogyakarta.
+Visit the Kotagede Mosque and the Royal Cemetery.
+Visit a silver workshop in Kotagede to witness the traditional craftsmanship.
+Consider purchasing unique silver jewelry as souvenirs.
+"Afternoon: Taman Sari Underground Mosque"
+Visit the underground mosque within the Taman Sari complex.
+Explore the hidden gem with its unique architectural features.
+"Evening: Malioboro Street"
+Spend your final evening strolling along Malioboro Street.
+Shop for souvenirs, try local snacks, and enjoy the lively atmosphere.
+Visit Alun-Alun Kidul, the southern square, in the evening.
+Try the unique experience of crossing the "Southern Square Alun-Alun Kidul" in the dark with your eyes closed for good luck.
+        `,
+      },
+    ],
     cost: 25000,
     reviews: 4,
     numOfDaysToStay: 3,
@@ -233,8 +1475,42 @@ export const Places: PlacesDataTypes[] = [
     name: 'Kathmandu',
     imageUrl: '',
     country: 'Nepal',
-    description:
-      "Kathmandu, a vibrant tapestry woven from ancient temples and chaotic streets, whispers tales of Himalayan whispers and spiritual journeys. Imagine temples adorned with ochre and crimson, their intricate carvings reaching for the snow-capped giants that guard the valley. Bustling alleyways thrum with the cacophony of vendors, pilgrims, and honking scooters, a sensory overload that pulsates with the city's raw energy. Pashupatinath, bathed in the sacred scent of incense, echoes with the murmur of ancient chants. Sadhus, draped in saffron robes, meditate amidst funeral pyres, their peaceful presence amidst life's final journey a stark reminder of impermanence. Swayambhunath, the monkey temple, perched atop a hill, watches over the city with its all-seeing eyes, a silent guardian amidst the urban melee. But Kathmandu isn't just a spiritual sanctuary. Thamel, its tourist heart, explodes with vibrant cafes, rooftop bars, and trekking shops, a meeting point for adventurers and culture seekers. Wander through hidden courtyards where incense hangs heavy in the air and monks debate Buddhist scripture. Bargain for handmade treasures in bustling markets, the air thick with the scent of spices and colorful threads. As the sun dips below the snow-capped peaks, painting the Himalayas in fiery hues, Kathmandu transforms into a canvas of twinkling lights. Gather around bonfires in rooftop restaurants, the city lights sparkling below like a fallen Milky Way. Sip warm yak butter tea in cozy cafes, sharing stories of mountain treks and spiritual encounters. Kathmandu is a place where mountains pierce the sky and ancient traditions rub shoulders with modern chaos. It's an invitation to lose yourself in the city's vibrant embrace, to find peace amidst the noise, and to discover the beauty that lies within the shadows of Himalayan giants. So, pack your bags, wander its alleys and temples, and let Kathmandu whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Heritage and Culture`,
+        dayContent: `
+        "Morning: Boudhanath Stupa"
+Start your day early with a visit to Boudhanath Stupa, one of the largest stupas in Nepal.
+Explore the surroundings and join the locals in the morning rituals.
+Enjoy a traditional Nepali breakfast in one of the local cafes near Boudhanath.
+Visit Pashupatinath Temple, a sacred Hindu temple on the banks of the Bagmati River.
+Explore the temple complex and witness the religious ceremonies.
+"Afternoon: Lunch"
+Have lunch at a local restaurant near Pashupatinath, offering both local and international cuisine.
+Head to Kathmandu Durbar Square, a UNESCO World Heritage Site.
+Explore the historical architecture, including the Kumari Ghar (Kumari's residence).
+"Evening: Thamel"
+Spend your evening in Thamel, Kathmandu's bustling neighborhood known for its shops, restaurants, and vibrant nightlife.
+Enjoy dinner at a local restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Nature and History`,
+        dayContent: `
+        "Morning: Swayambhunath (Monkey Temple)"
+Begin your day with a visit to Swayambhunath, also known as the Monkey Temple.
+Climb the stairs for panoramic views of Kathmandu Valley.
+Have breakfast at a café with a view of Swayambhunath.
+Consider taking a scenic flight over the Kathmandu Valley to get a bird's eye view of the Himalayas and surrounding landscapes.
+"Afternoon: Lunch"
+Enjoy lunch in a local restaurant, perhaps in the Patan Durbar Square area.
+Explore Patan Durbar Square, another UNESCO World Heritage Site with a rich display of Newari architecture.
+Visit the Patan Museum and Hiranya Varna Mahavihar (Golden Temple).
+"Evening: Dinner"
+Have dinner at a rooftop restaurant in Patan, enjoying the views of the historic city.
+        `,
+      },
+    ],
     cost: 15000,
     reviews: 4,
     numOfDaysToStay: 2,
@@ -243,8 +1519,39 @@ export const Places: PlacesDataTypes[] = [
     name: 'Pokhara',
     imageUrl: '',
     country: 'Nepal',
-    description:
-      "Pokhara, Nepal's jewel nestled beside emerald Phewa Lake, whispers tales of both serene reflection and adventurous thrills. Imagine snow-capped Annapurna giants mirrored in still waters, their grandeur reflected in every ripple. Lakeside cafes spill onto cobbled streets, their terraces buzzing with travelers sharing tales of mountain treks and lakeside walks. Phewa Lake itself is a mesmerizing canvas. Hire a colorful wooden rowboat and drift amidst the reflections, the gentle lapping of waves a calming melody. Kayak through misty mornings, the silence broken only by the calls of water birds and the gentle splash of your paddle. Or simply stretch out on the warm sand, letting the sun kiss your skin while panoramic views fill your gaze. But Pokhara isn't just about lakeside bliss. For adventure seekers, the mighty Himalayas beckon. Trek through verdant valleys, the crisp air invigorating your spirit. Challenge yourself on Poon Hill, where sunrise paints the Himalayas in a mesmerizing spectacle. Explore hidden waterfalls plunging into turquoise pools, their cool spray a reward for your efforts. As the sun dips below the mountains, casting long shadows across the lake, Pokhara transforms into a canvas of twinkling lights. Sample steaming bowls of dal bhat on rooftop terraces, the city lights shimmering below like a scattered constellation. Seek serenity in lakeside yoga studios, finding peace amidst the backdrop of snow-capped peaks. Pokhara is a place where tranquility and adventure dance hand-in-hand. It's an invitation to lose yourself in the embrace of nature, to find solace in the stillness of the lake, and to test your limits amidst the towering Himalayas. So, pack your bags, wander its lakeside paths and mountain trails, and let Pokhara whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Lakeside and Mountain Views`,
+        dayContent: `
+        "Morning: Arrival in Pokhara"
+Arrive in Pokhara and check into your hotel.
+Head straight to Lakeside, the vibrant area surrounding Phewa Lake.
+Take a serene boat ride on Phewa Lake, enjoying the reflection of the Annapurna range.
+Visit Bindhyabasini Temple, a sacred Hindu temple with panoramic views of Pokhara.
+"Afternoon: Lunch at Lakeside"
+Enjoy lunch at one of the lakeside restaurants with a view.
+Explore Devil's Fall, a unique waterfall where the Pardi Khola stream vanishes underground.
+"Evening: Gupteshwor Cave"
+Visit Gupteshwor Cave, located near Devi's Fall, known for its stalactites and stalagmites.
+Take a boat across Phewa Lake and hike or drive to the World Peace Pagoda for a spectacular sunset view.
+Enjoy dinner at a lakeside restaurant, soaking in the relaxed atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Adventure and Cultural Exploration`,
+        dayContent: `
+        "Morning: Early Morning Paragliding"
+Experience the thrill of paragliding from Sarangkot for panoramic views of Pokhara and the Himalayas.
+Have breakfast at a café in Sarangkot enjoying the mountain scenery.
+"Afternoon: International Mountain Museum"
+Visit the International Mountain Museum to learn about the culture, history, and fauna of the Himalayas.
+Return to Lakeside for lunch at a restaurant of your choice.
+"Evening: Phewa Lakeside Stroll"
+Take a leisurely stroll along the lakeside, exploring shops and enjoying the views.
+Have dinner at a restaurant offering a cultural show, featuring traditional Nepali music and dance.
+        `,
+      },
+    ],
     cost: 15000,
     reviews: 4,
     numOfDaysToStay: 2,
@@ -253,8 +1560,62 @@ export const Places: PlacesDataTypes[] = [
     name: 'Interlaken',
     imageUrl: '',
     country: 'Switzerland',
-    description:
-      "Interlaken, a sparkling gem nestled between emerald lakes and towering peaks, whispers tales of alpine adventure and Swiss charm. Imagine turquoise waters, Thun and Brienz, reflecting the jagged majesty of Eiger, Mönch, and Jungfrau, their snowy slopes mirroring the endless blue sky. Cobbled streets lined with timber houses hum with the gentle clink of cowbells and the rhythmic murmur of the Aare River, flowing like a liquid ribbon through the town's heart. For the thrill-seeker, Interlaken is a playground. Hike through verdant meadows and fragrant pine forests, the crisp air invigorating your lungs. Scale snow-capped peaks on gondolas, the world unfolding beneath you like a breathtaking tapestry. Kayak down the Aare River, the cool spray refreshing your face as you navigate gentle rapids and tranquil stretches. But Interlaken isn't just about adrenaline. Wander through charming streets adorned with flower-filled balconies, their sweet perfume mingling with the scent of freshly baked bread. Discover traditional Swiss crafts in bustling markets, each hand-carved wooden doll or painted musical box whispering tales of generations past. Relax in lakeside cafes, sipping rich hot chocolate as the snow-capped peaks blush with the hues of sunrise or sunset. As twilight descends, Interlaken transforms into a canvas of twinkling lights reflected on the still waters. Gather around crackling bonfires in rustic restaurants, sharing stories under a star-studded sky. Immerse yourself in the soothing warmth of thermal baths, letting the mineral-rich water melt away any lingering stress. Interlaken is a place where adventure and tranquility exist in perfect harmony. It's an invitation to lose yourself in the embrace of nature, to feel the thrill of alpine adventures, and to discover the timeless charm of Swiss tradition. So, pack your bags, wander its cobbled streets and mountain trails, and let Interlaken whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Lakeside Relaxation`,
+        dayContent: `
+        "Morning: Arrival in Interlaken"
+Arrive in Interlaken and check into your hotel.
+Take a stroll along the beautiful Höheweg promenade.
+"Afternoon: Boat Cruise on Lake Thun"
+In the afternoon, enjoy a boat cruise on Lake Thun.
+Take in the panoramic views of the surrounding mountains.
+"Evening: Dinner at Lakeside Restaurant"
+Have dinner at a lakeside restaurant with views of the sunset over Lake Thun.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Jungfraujoch Excursion`,
+        dayContent: `
+        "Morning: Jungfraujoch Railway Excursion"
+Take an early morning train to Jungfraujoch, the "Top of Europe."
+Explore the Ice Palace and enjoy the panoramic views of the Aletsch Glacier.
+"Afternoon: Lunch at Jungfraujoch"
+Have lunch at one of the mountain restaurants.
+Return to Interlaken in the late afternoon.
+Rest and relax at your hotel or explore Interlaken's charming town.
+"Evening: Dinner at Swiss Fondue Restaurant"
+Experience traditional Swiss fondue for dinner at a local restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Adventure in the Mountains`,
+        dayContent: `
+        "Morning: Schynige Platte Railway"
+Take the historic Schynige Platte Railway for stunning views of the Eiger, Mönch, and Jungfrau mountains.
+Explore the hiking trails or visit the Alpine Botanical Garden at Schynige Platte.
+"Afternoon: Picnic Lunch or Mountain Restaurant"
+Enjoy a picnic lunch or dine at the mountain restaurant.
+In the afternoon, try paragliding for a thrilling adventure and panoramic aerial views.
+"Evening: Dinner at Traditional Swiss Restaurant"
+Have dinner at a traditional Swiss restaurant in Interlaken
+        `,
+      },
+      {
+        dayHeading: `Day 4: Adventure and Relaxation`,
+        dayContent: `
+        "Morning: Harder Kulm"
+Take the funicular to Harder Kulm, offering breathtaking views of the Jungfrau region.
+Visit the viewpoint and enjoy the mountain air.
+"Afternoon: Lunch at Harder Kulm Restaurant"
+Have lunch at the restaurant on Harder Kulm.
+In the afternoon, take a boat cruise on the turquoise waters of Lake Brienz.
+"Evening: Dinner in Interlaken Old Town"
+Explore the charming streets of Interlaken Old Town.
+Have dinner at a local Swiss or international restaurant.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 4,
@@ -263,8 +1624,67 @@ export const Places: PlacesDataTypes[] = [
     name: 'Jungfraujoch',
     imageUrl: '',
     country: 'Switzerland',
-    description:
-      "Jungfraujoch, perched atop the Swiss Alps like a crown of ice and snow, whispers tales of dizzying heights and breathtaking panoramas. Imagine Europe's highest railway station, carved into the heart of a mountain, its windows revealing a world transformed into a glistening wonderland. Towering peaks, Jungfrau, Mönch, and Eiger, pierce the sky, their jagged silhouettes dancing against the azure canvas. Stepping out onto the observation platform is to plunge into a realm of perpetual winter. Breathtaking vistas unfold in every direction, mountains draped in pristine white, glaciers carving dramatic paths through the landscape. The air crisp and thin, laced with the exhilarating chill of high altitude, invigorates every breath. Below, valleys shrink into miniature landscapes, dotted with toy-like villages and emerald lakes. But Jungfraujoch isn't just a breathtaking viewpoint. Explore the Ice Palace, a labyrinth of shimmering tunnels carved into the glacier itself, its crystal walls reflecting the sunlight in a kaleidoscope of hues. Glide down the slopes on the longest toboggan run in Europe, the wind roaring in your ears as you weave through a magical white world. Or simply stand in awe on the Sphinx Observation Deck, Europe's highest point reachable by train, and feel the world shrink away beneath you. As the sun dips below the horizon, painting the snow-capped peaks in fiery hues, Jungfraujoch transforms into a canvas of twinkling stars. Gather around crackling bonfires in cozy restaurants, the celestial dome shimmering above like a diamond-studded blanket. Sip warm Swiss cocoa, the rich sweetness warming you from within as you share stories of this once-in-a-lifetime experience. Jungfraujoch is more than just a destination; it's an experience that resonates in the soul. It's an invitation to stand atop the world, to breathe the air of the gods, and to feel the raw power and beauty of nature in its purest form. So, pack your bags, board the highest train in Europe, and let Jungfraujoch whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival in Interlaken`,
+        dayContent: `
+        "Morning: Arrival in Interlaken"
+Arrive in Interlaken and check into your hotel.
+Explore the charming town and enjoy the views of the surrounding mountains.
+"Afternoon: Leisure Time"
+Take a leisurely walk along the Höheweg promenade or explore the lakeside area.
+Visit the Interlaken Casino or take a boat cruise on Lake Thun or Lake Brienz.
+"Evening: Dinner in Interlaken"
+Have dinner at a local Swiss or international restaurant.
+Rest and prepare for your Jungfraujoch adventure the next day.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Jungfraujoch Excursion`,
+        dayContent: `
+        "Morning: Jungfraujoch Train Journey"
+Early morning, take a train from Interlaken to Jungfraujoch.
+Enjoy the scenic journey through picturesque landscapes.
+Explore the attractions at Jungfraujoch, including the Sphinx Observatory and Ice Palace.
+Take in the panoramic views of the surrounding peaks, including the Eiger, Mönch, and Jungfrau.
+"Afternoon: Lunch at Jungfraujoch"
+Have lunch at one of the mountain restaurants with stunning views.
+Depending on the season, engage in snow activities like skiing or snowboarding or enjoy a short hike.
+"Evening: Return to Interlaken"
+Return to Interlaken in the evening.
+Relax and have dinner at a local restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Schilthorn Adventure`,
+        dayContent: `
+        "Morning: Schilthorn Cable Car Ride"
+Take a cable car to Schilthorn, famous for its panoramic views of the Swiss Alps.
+Explore Piz Gloria, the revolving restaurant and observation deck at the top of Schilthorn.
+Enjoy the views of iconic peaks, including the Eiger, Mönch, and Jungfrau.
+"Afternoon: Thrill Walk or Birg Adventure"
+Experience the Thrill Walk or visit Birg for additional adrenaline-pumping activities.
+Have lunch at Piz Gloria, taking in the spectacular alpine scenery.
+"Evening: Return to Interlaken"
+Return to Interlaken in the evening.
+Relax, stroll around, and have dinner at a restaurant of your choice.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Outdoor Adventures`,
+        dayContent: `
+        "Morning: Paragliding or Outdoor Activity"
+Engage in an outdoor adventure like paragliding, hiking, or biking in the surrounding areas.
+Take a boat cruise on Lake Thun, exploring the charming lakeside villages.
+"Afternoon: Lunch at Lakeside Restaurant"
+Enjoy lunch at a lakeside restaurant with picturesque views.
+Explore the old town of Interlaken, known for its historic charm and boutique shops.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a Swiss or international restaurant.
+Reflect on your Jungfraujoch adventure.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 4,
@@ -273,8 +1693,70 @@ export const Places: PlacesDataTypes[] = [
     name: 'Lake Geneva',
     imageUrl: '',
     country: 'Switzerland',
-    description:
-      "Lake Geneva, a crescent-shaped gem nestled between rolling vineyards and majestic Alps, whispers tales of romance, adventure, and timeless beauty. Imagine crystalline turquoise waters reflecting the snow-capped peaks of Mont Blanc, their mirrored image dancing in the gentle breeze. Quaint lakeside villages like Lausanne and Evian-les-Bains bask in the golden sunlight, their pastel houses adorned with flower-filled balconies. For the bon vivant, Lake Geneva is a playground of elegance and indulgence. Cruise the shimmering expanse on a historic paddle steamer, the gentle lapping of waves against the hull a tranquil serenade. Savor Michelin-starred cuisine in lakeside restaurants, the panoramic views as exquisite as the culinary creations on your plate. Discover luxury shops lining cobbled streets, their windows glittering with Swiss watches and designer fashions. But Lake Geneva whispers to the adventurous soul too. Hike scenic trails that hug the shoreline, the scent of pine filling the air as you marvel at breathtaking panoramas. Cycle through verdant vineyards, the sun warming your skin as you pass charming villages and rustic wineries. Paddle across the crystal-clear waters on a kayak, the playful glint of fish and the call of water birds your only companions. As the sun dips below the horizon, painting the sky in fiery hues, Lake Geneva transforms into a canvas of twinkling lights. Quaint villages glow like scattered jewels, their reflections dancing on the still waters. Sip Swiss hot chocolate on a cozy terrace, the warmth radiating outwards as you share stories under a star-studded sky. Lake Geneva is more than just a beautiful destination; it's a tapestry woven from romance, adventure, and timeless beauty. It's an invitation to lose yourself in the embrace of nature, to indulge in the finer things in life, and to create memories that will forever shimmer like golden sunlight on the surface of this breathtaking lake. So, pack your bags, wander its shores and villages, and let Lake Geneva whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Geneva City and Lakefront`,
+        dayContent: `
+        "Morning: Arrival in Geneva"
+Arrive in Geneva and check into your hotel.
+Start your exploration at Lake Geneva's iconic Jet d'Eau fountain.
+Visit Parc des Bastions and the Reformation Wall, an outdoor monument depicting key figures of the Reformation.
+"Afternoon: Lunch in Old Town"
+Enjoy lunch at a charming café in Geneva's Old Town.
+Explore the narrow streets, St. Pierre Cathedral, and Maison Tavel (Switzerland's oldest house).
+Visit the United Nations Office at Geneva for a guided tour and insights into international diplomacy.
+"Evening: Lake Geneva Cruise"
+Take an evening cruise on Lake Geneva for panoramic views of the city and mountains.
+Dinner on the boat or lakeside restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Lausanne and Lavaux Vineyards`,
+        dayContent: `
+        "Morning: Train to Lausanne"
+Take a morning train to Lausanne (approximately 35 minutes from Geneva).
+Explore the Olympic Museum in Lausanne, dedicated to the history of the Olympic Games.
+"Afternoon: Lunch in Ouchy"
+Have lunch in Ouchy, Lausanne's lakeside district.
+Stroll along the promenade and enjoy the views.
+Afternoon visit to the Lavaux region, a UNESCO World Heritage site known for its terraced vineyards.
+Wine tasting at a local winery.
+"Evening: Return to Geneva"
+Return to Geneva in the evening.
+Dinner at a Swiss or international restaurant in the city.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Montreux and Chillon Castle`,
+        dayContent: `
+        "Morning: Train to Montreux"
+Take a morning train to Montreux (approximately 1 hour from Geneva).
+Stroll along the beautiful Montreux lakeside promenade.
+Visit the Freddie Mercury statue.
+"Afternoon: Chillon Castle"
+Explore Chillon Castle, a medieval fortress on the shores of Lake Geneva.
+Enjoy the castle's history and scenic surroundings.
+Have lunch in Montreux, known for its culinary scene.
+"Evening: Optional Jazz Festival"
+If visiting during July, attend the Montreux Jazz Festival.
+Dinner at a lakeside restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Yvoire and Nyon`,
+        dayContent: `
+        "Morning: Boat to Yvoire"
+Take a boat across Lake Geneva to Yvoire, a medieval village in France.
+Explore the charming streets, gardens, and the Jardin des Cinq Sens (Garden of the Five Senses).
+"Afternoon: Boat to Nyon"
+Return to Switzerland by boat and head to Nyon.
+Visit Nyon Castle and the Roman Museum, offering insights into the region's history.
+"Evening: Dinner in Nyon"
+Have dinner in Nyon at a local restaurant.
+Enjoy the ambiance of the lakeside town.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 4,
@@ -283,8 +1765,68 @@ export const Places: PlacesDataTypes[] = [
     name: 'Lucerne',
     imageUrl: '',
     country: 'Switzerland',
-    description:
-      "Lucerne, a charming pearl nestled where emerald Lake Lucerne kisses Alpine majesty, whispers tales of medieval romance and breathtaking panoramas. Imagine the Chapel Bridge, adorned with colorful murals, spanning the Reuss River like a fairytale portal, its reflection dancing in the sun-dappled water. Cobbled streets lined with pastel buildings hum with the cheerful clang of trams and the murmur of languages from around the world. For history buffs, Lucerne is an open book. Climb the ramparts of the iconic Lion Monument, a poignant tribute to fallen Swiss soldiers, its mournful roar echoing through the centuries. Explore the opulent halls of the Hofkirche, its stained glass windows casting rainbows on the stone floor. Wander through the labyrinthine alleyways of the Old Town, each corner revealing a hidden courtyard or a weathered plaque whispering stories of bygone eras. But Lucerne is also a playground for adventure seekers. Ride the world's steepest funicular up Mount Pilatus, the wind whipping through your hair as you ascend into a world of cloud-kissed peaks and verdant valleys. Hike through fragrant pine forests, the crisp alpine air invigorating your lungs. Embark on a scenic cruise across the lake, the crystal-clear waters mirroring the majestic mountains overhead. As the sun dips below the Rigi, painting the sky in fiery hues, Lucerne transforms into a tapestry of twinkling lights. Gather around crackling bonfires on lively terraces, the city awash in a warm glow. Savor traditional Swiss fondue in cozy restaurants, the rich cheese warming you from within as you share stories beneath the star-studded sky. Lucerne is more than just a beautiful destination; it's a symphony of history, adventure, and breathtaking beauty. It's an invitation to lose yourself in the embrace of charming streets and towering mountains, to discover the whispers of centuries past, and to create memories that will forever shimmer like golden sunlight on the surface of Lake Lucerne. So, pack your bags, wander its cobbled streets and mountain trails, and let Lucerne whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Old Town Exploration`,
+        dayContent: `
+        "Morning: Arrival in Lucerne"
+Arrive in Lucerne and check into your hotel.
+Start your exploration with a leisurely stroll along the Chapel Bridge and Water Tower.
+Explore the iconic Chapel Bridge, the Water Tower, and the picturesque Old Town.
+"Afternoon: Lunch in Old Town"
+Have lunch at a charming restaurant in Lucerne's Old Town.
+Try Swiss specialties like Rösti or cheese fondue.
+Visit the Lion Monument, a poignant sculpture carved into a sandstone rock face.
+"Evening: Dinner by the Lake"
+Enjoy dinner by the lakeside, savoring the views of Lake Lucerne and the surrounding mountains.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Mount Pilatus Adventure`,
+        dayContent: `
+        "Morning: Boat and Cogwheel Railway to Mount Pilatus"
+Take a boat from Lucerne to Alpnachstad, then the cogwheel railway to the summit of Mount Pilatus.
+Explore the summit, enjoy the panoramic views, and consider hiking some trails.
+"Afternoon: Lunch at Mount Pilatus"
+Have lunch at one of the mountaintop restaurants.
+Descend from Mount Pilatus via the cable car to Kriens.
+"Evening: Return to Lucerne"
+Return to Lucerne and relax in the Old Town.
+Dinner at a Swiss or international restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Lake Lucerne and Rigi`,
+        dayContent: `
+        "Morning: Steamboat Cruise on Lake Lucerne"
+Take a morning steamboat cruise on Lake Lucerne, passing by charming lakeside villages.
+Arrive in Vitznau and take the cogwheel train to the summit of Mount Rigi.
+"Afternoon: Lunch on Mount Rigi"
+Have lunch at a mountaintop restaurant with panoramic views.
+Explore the hiking trails or relax and enjoy the scenery.
+"Evening: Return to Lucerne"
+Descend from Mount Rigi and return to Lucerne.
+Enjoy dinner at a lakeside restaurant, soaking in the evening ambiance.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Day Trip to Engelberg and Titlis`,
+        dayContent: `
+        "Morning: Train to Engelberg"
+Take a morning train to Engelberg.
+Cable Car to Mount Titlis
+Ascend to Mount Titlis using the cable car and revolving Rotair gondola.
+Explore the summit, visit the Glacier Cave, and walk on the Cliff Walk suspension bridge.
+Enjoy lunch with panoramic views.
+"Afternoon: Return to Lucerne"
+Descend from Mount Titlis and return to Lucerne.
+Spend the afternoon shopping for Swiss watches, chocolates, and souvenirs in Lucerne.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a traditional Swiss restaurant.
+Reflect on your memorable time in Lucerne.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 4,
@@ -293,8 +1835,70 @@ export const Places: PlacesDataTypes[] = [
     name: 'Zermatt',
     imageUrl: '',
     country: 'Switzerland',
-    description:
-      "Zermatt, a fairytale village nestled like a precious jewel in the heart of the Swiss Alps, whispers tales of sky-piercing peaks and glacial majesty. Imagine the iconic Matterhorn, a jagged granite spire piercing the azure sky, its imposing presence reflected in the still waters of Riffelsee lake. Quaint chalets adorned with flower-filled balconies line cobbled streets, their warmth a welcome contrast to the cool mountain air. For adrenaline junkies, Zermatt is a playground of icy heights and thrilling descents. Ski down freshly groomed slopes, the powder spraying behind you like diamonds in the sunlight. Trek through glacial valleys, the crunch of ice underfoot and the roar of crevasses a symphony of raw power. Ride Europe's highest cable car to the Klein Matterhorn, Europe's highest viewing platform, where the world shrinks to a mesmerizing tapestry of ice and snow. But Zermatt isn't just about pushing your limits. Wander through charming streets adorned with hand-carved wooden signs, the warm fragrance of freshly baked bread mingling with the scent of pine. Discover local traditions in bustling markets, each colorful cheese wheel and intricate wood carving a testament to generations of alpine craftsmanship. Relax in cozy sun-drenched cafes, sipping rich hot chocolate as you marvel at the Matterhorn, its shadow painting the village in a dramatic dance of light and dark. As the sun dips below the jagged peaks, painting the sky in fiery hues, Zermatt transforms into a canvas of twinkling lights. Gather around crackling bonfires in rustic restaurants, the warmth radiating outwards as you share stories under a star-studded sky. Immerse yourself in the soothing warmth of thermal baths, letting the mineral-rich water melt away any lingering stress. Zermatt is more than just a ski resort; it's a place where breathtaking beauty meets timeless charm. It's an invitation to lose yourself in the embrace of nature, to feel the thrill of alpine adventures, and to discover the warmth and tradition that lie within the shadow of the mighty Matterhorn. So, pack your bags, wander its cobbled streets and mountain trails, and let Zermatt whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Village Exploration`,
+        dayContent: `
+        "Morning: Arrival in Zermatt"
+Arrive in Zermatt and check into your hotel.
+Enjoy the picturesque car-free village ambiance.
+Take the Gornergrat Railway for panoramic views of the surrounding peaks.
+"Afternoon: Lunch with a View"
+Have lunch at a restaurant with a view of the Matterhorn.
+Explore Bahnhofstrasse, Zermatt's main street, for shopping.
+Visit the Matterhorn Museum to learn about the history of Zermatt and the iconic Matterhorn.
+"Evening: Dinner in the Village"
+Enjoy dinner at a Swiss or international restaurant in the village.
+Stroll through the charming streets and savor the alpine atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Klein Matterhorn and Glacier Paradise`,
+        dayContent: `
+        "Morning: Klein Matterhorn (Matterhorn Glacier Paradise)"
+Take the cable car to Klein Matterhorn, also known as the Matterhorn Glacier Paradise.
+Explore the ice palace and enjoy breathtaking views of the Alps.
+"Afternoon: Lunch at Glacier Paradise"
+Have lunch at one of the restaurants at the Glacier Paradise.
+Engage in snow activities like skiing or snowboarding.
+Take a scenic hike to Schwarzsee, enjoying the alpine scenery.
+"Evening: Return to Zermatt"
+Return to Zermatt in the evening.
+Relax and have dinner at a cozy restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Sunnegga and Hiking`,
+        dayContent: `
+        "Morning: Sunnegga"
+Take the funicular to Sunnegga, a beautiful area with flower-filled meadows.
+Explore the Sunnegga Paradise playground.
+Embark on a picturesque hike from Sunnegga to Fluhalp.
+Enjoy the stunning views of the surrounding peaks.
+"Afternoon: Lunch at Fluhalp"
+Have lunch at the mountain hut Fluhalp, indulging in Swiss specialties.
+Afternoon leisure time for relaxation or exploring more trails.
+Consider visiting the Leisee lake for a tranquil experience.
+"Evening: Dinner in Zermatt"
+Return to Zermatt in the evening.
+Enjoy dinner at a local Swiss restaurant.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Hiking and Relaxation`,
+        dayContent: `
+        "Morning: Gourmet Hike"
+Join a gourmet hike, combining scenic trails with culinary experiences.
+Visit mountain restaurants for local dishes and panoramic views.
+"Afternoon: Spa and Wellness"
+Spend the afternoon relaxing at a spa or wellness center in Zermatt.
+Take in the serene mountain surroundings.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a fine dining restaurant, savoring Swiss cuisine.
+Reflect on your Zermatt adventure.
+        `,
+      },
+    ],
     cost: 35000,
     reviews: 5,
     numOfDaysToStay: 4,
@@ -303,58 +1907,532 @@ export const Places: PlacesDataTypes[] = [
     name: 'Glacier National Park',
     imageUrl: '',
     country: 'America',
-    description:
-      "Glacier National Park, a crown of jagged peaks draped in emerald forests, whispers tales of ancient ice and untamed wilderness. Imagine sapphire lakes reflecting snow-capped giants, their glacial breath sculpting valleys and birthing cascading waterfalls. Alpine meadows burst with wildflowers, their vibrant hues rivaling the turquoise sky, while grizzly bears roam amidst the whispering pines. For the adventurer, Glacier is a wonderland of rugged beauty. Hike the Going-to-the-Sun Road, a ribbon of asphalt carved through the mountains, its dizzying heights revealing breathtaking panoramas. Scale snow-capped peaks, the wind singing in your ears as you conquer granite giants. Kayak crystal-clear lakes, the mirrored peaks dancing a silent ballet, and listen to the whispers of ancient glaciers hidden beneath the surface. But Glacier is more than just a rugged playground. Explore hidden waterfalls tucked away in verdant forests, their refreshing mist a welcome embrace on a sun-drenched day. Learn the stories of the Blackfeet people, whose ancestors walked these lands for centuries, their wisdom echoing in the wind whistling through the canyons. Discover vibrant wildflowers clinging to rocky cliffs, each bloom a testament to nature's resilience. As the sun dips below the towering peaks, painting the sky in fiery hues, Glacier transforms into a canvas of twinkling stars. Gather around crackling campfires bajo a velvet sky, sharing stories of mountain triumphs and quiet moments of awe. Sleep under the Milky Way's embrace, listening to the lullaby of wind whistling through the pines and the whispers of a park holding secrets older than time. Glacier National Park is more than just a destination; it's an experience that resonates in the soul. It's an invitation to lose yourself in the embrace of untamed wilderness, to feel the power of ancient glaciers, and to discover the beauty that lies within the crown of the continent. So, pack your bags, wander its trails and forests, and let Glacier whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Lake McDonald`,
+        dayContent: `
+        "Morning: Arrival in Glacier National Park"
+Arrive and check into your accommodation.
+If flying, consider arriving at Glacier Park International Airport.
+"Afternoon: Lake McDonald"
+Spend the afternoon exploring Lake McDonald.
+Relax by the lake, take a scenic boat tour, or go for a hike.
+"Evening: Dinner at Lake McDonald Lodge"
+Have dinner at Lake McDonald Lodge, enjoying views of the lake
+        `,
+      },
+      {
+        dayHeading: `Day 2: Going-to-the-Sun Road (West to East)`,
+        dayContent: `
+        "Morning: Drive Going-to-the-Sun Road (West to East)"
+Begin your journey on the iconic Going-to-the-Sun Road.
+Stop at the Logan Pass Visitor Center and take a short hike.
+"Afternoon: St. Mary Lake"
+Explore St. Mary Lake and take a boat tour (if available).
+Visit the Rising Sun Motor Inn for stunning views.
+"Evening: Dinner in St. Mary"
+Have dinner in St. Mary, experiencing local cuisine.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Many Glacier Area`,
+        dayContent: `
+        "Morning: Hike in Many Glacier"
+Choose a scenic hike in the Many Glacier area.
+Consider trails like Grinnell Glacier or Iceberg Lake.
+"Afternoon: Boat Tour on Swiftcurrent Lake and Lake Josephine"
+Take a boat tour on Swiftcurrent Lake and Lake Josephine.
+Enjoy the views of glaciers and wildlife.
+"Evening: Dinner at Many Glacier Hotel"
+Have dinner at Many Glacier Hotel, a historic and picturesque lodge.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Two Medicine Area`,
+        dayContent: `
+        "Morning: Drive to Two Medicine"
+Head to the Two Medicine area, known for its serene lakes and trails.
+Consider a boat tour on Two Medicine Lake.
+"Afternoon: Scenic Hike"
+Hike one of the scenic trails in the Two Medicine area.
+Grizzly Falls and Running Eagle Falls are notable spots.
+"Evening: Dinner in East Glacier Park Village"
+Enjoy dinner in East Glacier Park Village.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Explore the Southern Area`,
+        dayContent: `
+        "Morning: Hike in the Southern Area"
+Choose a hike in the southern part of the park, like Avalanche Lake.
+Enjoy the pristine wilderness and diverse flora.
+"Afternoon: Red Bus Tour"
+Take a historic Red Bus Tour for a narrated journey through the park's highlights.
+"Evening: Dinner in Apgar Village"
+Have dinner in Apgar Village, celebrating your adventures.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
-    numOfDaysToStay: 7,
+    numOfDaysToStay: 5,
   },
   {
     name: 'Grand Canyon National Park',
     imageUrl: '',
     country: 'America',
-    description:
-      "Carved by the Colorado River's millennia-long tantrum, Grand Canyon National Park whispers tales of geological grandeur and endless vistas. Imagine a yawning chasm stretching for 277 miles, its layered walls a colorful tapestry of time, each stripe a chapter in Earth's story. Condors ride thermals above the abyss, their shadows tracing ancient shadows on the canyon floor.For the adventurer, the canyon is a playground of dizzying heights and hidden wonders. Hike along sun-drenched rims, the wind tugging at your hair as you peer into the immensity below. Descend into the fiery depths on muleback, the canyon walls closing in like cathedral ceilings, revealing hidden waterfalls and secret oases. Kayak emerald tributaries, the cool spray a welcome respite from the desert sun, and listen to the whispers of ancient water carving its song through time. But the canyon isn't just about adrenaline rushes. Explore vibrant desert flora clinging to cliffs, defying the odds with their tenacity. Watch the sun paint the rock walls in fiery hues at sunset, a silent masterpiece unfolding before your eyes. Learn the stories of the Hualapai and Navajo people, whose ancestors saw the canyon as a gateway to the spirit world, their reverence echoing in the rustling wind. As twilight descends, the canyon transforms into a tapestry of twinkling stars reflected in the depths. Gather around crackling campfires, sharing stories under the Milky Way's embrace, feeling small yet connected to something much grander. Sleep under the vast, starry sky, lulled by the whisper of the Colorado River, a constant pulse marking the heartbeat of this timeless wonder. Grand Canyon National Park is more than just a national park; it's a window into Earth's history, a canvas for nature's artistry, and a sanctuary for the soul. It's an invitation to lose yourself in the immensity, to feel the whispers of time and nature, and to discover the breathtaking beauty that lies at the heart of our planet. So, pack your bags, wander its trails and rims, and let Grand Canyon whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: South Rim Arrival and Orientation`,
+        dayContent: `
+        "Morning: Arrival at Grand Canyon Village"
+Arrive at Grand Canyon Village and check into your accommodation.
+Begin your exploration at the Visitor Center for an orientation.
+"Afternoon: Mather Point and Rim Trail"
+Visit Mather Point for your first breathtaking view of the Grand Canyon.
+Take a leisurely walk along the Rim Trail.
+"Evening: Sunset at Hopi Point"
+Experience a mesmerizing sunset at Hopi Point.
+Attend a ranger-led program if available.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Bright Angel Trail Hike`,
+        dayContent: `
+        "Morning: Bright Angel Trailhead"
+Start your day early with a hike along the Bright Angel Trail.
+Consider hiking to Indian Garden or Plateau Point for stunning canyon views.
+"Afternoon: Lunch at Phantom Ranch"
+Have lunch at Phantom Ranch (if hiking to the bottom).
+Explore the area around the Colorado River.
+"Evening: Return to the Rim"
+Hike back to the rim in the late afternoon.
+Relax and have dinner in Grand Canyon Village.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Desert View Drive`,
+        dayContent: `
+        "Morning: Desert View Watchtower"
+Drive along Desert View Drive, stopping at various viewpoints.
+Explore the historic Desert View Watchtower.
+"Afternoon: Lunch at Desert View"
+Have a picnic lunch at Desert View with panoramic canyon views.
+Visit the Tusayan Ruins and Museum.
+"Evening: Stargazing Program"
+Attend a ranger-led stargazing program.
+Experience the dark skies and celestial wonders.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Grand Canyon Railway and Williams`,
+        dayContent: `
+        "Morning: Grand Canyon Railway"
+Take the historic Grand Canyon Railway from Williams to the South Rim.
+Enjoy the scenic ride through the pine forests.
+"Afternoon: Williams Exploration"
+Explore the charming town of Williams, known for its Route 66 history.
+Visit the historic Grand Canyon Brewing Company.
+"Evening: Return to Grand Canyon Village"
+Return to Grand Canyon Village in the evening.
+Have dinner at one of the local restaurants.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Grand Canyon Helicopter Tour and Departure`,
+        dayContent: `
+        "Morning: Helicopter Tour"
+Experience a thrilling helicopter tour over the Grand Canyon.
+Capture aerial views of the canyon's vastness.
+"Afternoon: Final Exploration"
+Spend your last afternoon exploring any missed viewpoints or trails.
+Reflect on your Grand Canyon adventure.
+"Evening: Departure"
+Depart from Grand Canyon Village or nearby airports.
+Carry with you memories of the Grand Canyon's awe-inspiring beauty.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
-    numOfDaysToStay: 7,
+    numOfDaysToStay: 5,
   },
   {
     name: 'Las Vegas',
     imageUrl: '',
     country: 'America',
-    description:
-      "Las Vegas, a shimmering mirage in the Mojave Desert, whispers tales of neon dreams and daring gambles. Imagine towering megacasinos erupting from the desert floor, their facades ablaze with lights that rival the stars. Fountains erupt in synchronized choreography, their glittering jets reflecting the city's pulsating energy. Cobblestone streets lined with extravagant hotels hum with the laughter of revelers and the clinking of coins in slot machines. For the thrill seeker, Vegas is a playground of endless possibilities. Ride heart-stopping rollercoasters that soar above the neon jungle, their screams merging with the city's electric symphony. Try your luck on velvet-lined casino floors, the clinking of chips and hushed whispers of anticipation building with each turn of the wheel. Witness world-class acrobatics and dazzling stage shows, their costumes and sets pushing the boundaries of imagination. But Vegas isn't just about adrenaline rushes. Explore hidden art galleries showcasing avant-garde creations, their daring exhibits challenging your perceptions. Discover serene botanical gardens tucked away amidst the neon, their lush greenery a welcome respite from the urban clamor. Savor Michelin-starred cuisine in opulent restaurants, their culinary artistry a feast for the senses. As the sun dips below the mountains, painting the desert sky in fiery hues, Vegas transforms into a canvas of twinkling stars mirrored in countless pool tiles. Dance to the rhythm of world-renowned DJs in sprawling nightclubs, the pulsating beats echoing through the canyons of steel and glass. Savor cocktails on rooftop terraces, watching the city below transform into a glittering kaleidoscope. Las Vegas is more than just a city; it's an experience that explodes across the senses. It's an invitation to lose yourself in the electric embrace, to chase your wildest dreams, and to create memories that will shimmer like the neon lights long after you leave. So, pack your dancing shoes and lucky dice, wander its glitzy avenues and hidden gardens, and let Las Vegas whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Strip Exploration`,
+        dayContent: `
+        "Morning: Check into your Hotel"
+Arrive in Las Vegas and check into your chosen hotel.
+Consider staying on the iconic Las Vegas Strip.
+"Afternoon : Explore the Strip"
+Take a leisurely walk along the Strip, marveling at the themed hotels and attractions.
+Visit iconic landmarks like the Bellagio Fountains and The Mirage volcano.
+"Evening: Dinner and Entertainment"
+Enjoy dinner at one of the many restaurants on the Strip.
+Attend a live show or performance.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Downtown Las Vegas and Fremont Street`,
+        dayContent: `
+        "Morning: Visit the Neon Museum"
+Explore the Neon Museum, home to iconic Las Vegas signs.
+Learn about the city's history through its neon lights.
+"Afternoon: Lunch at Container Park"
+Have lunch at Container Park in Downtown Las Vegas.
+Explore the unique shops and art installations.
+Experience the Fremont Street canopy light show.
+Try your luck at one of the historic casinos.
+"Evening: Dinner and Live Music"
+Choose a restaurant in the Fremont East District for dinner.
+Enjoy live music or entertainment in the area.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Red Rock Canyon`,
+        dayContent: `
+        "Morning: Drive to Red Rock Canyon"
+Head to Red Rock Canyon for a morning of hiking or scenic drives.
+Explore the Visitor Center and learn about the area's geology.
+"Afternoon: Picnic at Red Rock"
+Enjoy a picnic lunch amidst the stunning red rock formations.
+Continue exploring the scenic loop.
+"Evening: Dinner and Relaxation"
+Return to the Strip for dinner at a restaurant of your choice.
+Relax or attend a late-night show.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Arts and Culture Day`,
+        dayContent: `
+        "Morning: Visit The Arts District"
+Explore the Las Vegas Arts District.
+Visit galleries, studios, and unique boutiques.
+"Afternoon: Lunch at a Cultural Venue"
+Have lunch at a cultural venue like The Smith Center for the Performing Arts.
+Enjoy a matinee performance if available.
+"Evening: Dinner and Nightlife"
+Experience the city's diverse culinary scene for dinner.
+Explore the nightlife in areas like the LINQ Promenade or the High Roller.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Spa Day and Farewell`,
+        dayContent: `
+        "Morning: Relaxation Day"
+Spend the morning at a spa for relaxation and rejuvenation.
+"Afternoon: Shopping and Souvenirs"
+Explore shopping centers like The Forum Shops at Caesars or Miracle Mile Shops.
+Purchase souvenirs to remember your Las Vegas trip.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a top-rated restaurant.
+Reflect on your week in Las Vegas and enjoy your final evening.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
-    numOfDaysToStay: 7,
+    numOfDaysToStay: 5,
   },
   {
     name: 'Maui ',
     imageUrl: '',
     country: 'America',
-    description:
-      "Maui, an emerald jewel nestled in the sapphire Pacific, whispers tales of volcanic fire and ocean bliss. Imagine emerald rainforests cascading down volcanic slopes, their verdant embrace echoing with the calls of exotic birds. Turquoise waves lap onto crescent beaches, their rhythmic pulse a constant refrain, while the sun paints the sky in hues of coral and gold. For the adventurer, Maui is a playground of hidden wonders. Hike Haleakala Crater, a lunar landscape kissed by dawn's blush, where clouds dance like celestial ballerinas. Snorkel vibrant coral reefs teeming with underwater treasures, where angelfish flit like living jewels and turtles glide through sun-dappled water. Kayak along jagged coastlines, the spray of hidden waterfalls refreshing your face, and listen to the whispers of ancient lava tubes carved by fiery rivers long ago. But Maui isn't just about adrenaline rushes. Wander charming villages adorned with vibrant murals, their air scented with plumeria and guava. Discover waterfalls tucked away in verdant forests, their cool mist a welcome embrace on a sun-drenched day. Learn the stories of the Hawaiian people, their ancient rhythms still beating in the hula dancers' graceful movements and the strum of ukuleles beneath the starlit sky. As the sun dips below Molokini crater, painting the ocean in fiery hues, Maui transforms into a tapestry of twinkling stars reflected on rippling water. Gather around crackling bonfires on secluded beaches, sharing stories under the Milky Way's embrace, feeling the island's pulse beneath your feet. Savor fresh seafood feasts on oceanfront cafes, the salty breeze whispering tales of endless summer. Maui is more than just a destination; it's a symphony of breathtaking beauty, captivating culture, and endless adventure. It's an invitation to lose yourself in the embrace of the ocean, to feel the fire of the volcano's heart, and to discover the rhythm of island life that will forever sing in your soul. So, pack your swimsuit and adventurous spirit, wander its rugged coastlines and volcanic heights, and let Maui whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Relaxation`,
+        dayContent: `
+        "Morning: Arrival in Maui"
+Arrive at Kahului Airport and check into your accommodation.
+"Afternoon: Explore Local Beaches"
+Spend the afternoon relaxing on a nearby beach.
+Consider beaches like Ka'anapali Beach or Wailea Beach.
+"Evening: Dinner with Ocean Views"
+Enjoy dinner at a restaurant with ocean views.
+Experience your first Hawaiian sunset.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Haleakalā National Park`,
+        dayContent: `
+        "Morning: Sunrise at Haleakalā"
+Wake up early for a sunrise visit to Haleakalā National Park.
+Explore the volcanic landscapes and the unique summit area.
+"Afternoon: Explore Upcountry Maui"
+Visit Upcountry Maui for its farms, lavender fields, and charming towns.
+Have lunch at a local eatery.
+"Evening: Stargazing at Haleakalā"
+Return to Haleakalā for a stargazing experience (if available).
+Learn about the night sky with park rangers.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Lahaina and Ka'anapali`,
+        dayContent: `
+        "Morning: Explore Lahaina"
+Spend the morning exploring Lahaina Town.
+Visit historic sites like the Lahaina Banyan Court.
+"Afternoon: Lunch at Ka'anapali Beach"
+Head to Ka'anapali Beach for lunch and water activities.
+Relax on the beach or try snorkeling.
+"Evening: Sunset Dinner Cruise"
+Take a sunset dinner cruise along the coast.
+Enjoy a delicious meal with ocean views.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Snorkeling and Beach Day`,
+        dayContent: `
+        "Morning: Molokini Crater Snorkeling"
+Take a boat trip to Molokini Crater for snorkeling.
+Explore the vibrant underwater world.
+"Afternoon: Beach Relaxation"
+Spend the afternoon relaxing at a beautiful beach.
+Consider Big Beach or Makena Beach.
+"Evening: Dinner in Kihei"
+Have dinner in Kihei, known for its diverse dining options.
+Enjoy local flavors.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Iao Valley State Park and Surfing`,
+        dayContent: `
+        "Morning: Iao Valley State Park"
+Explore Iao Valley State Park and its iconic Iao Needle.
+Take a short hike through the lush valley.
+"Afternoon: Learn to Surf"
+Try your hand at surfing with a lesson at a local surf school.
+Enjoy the waves and the beautiful coastline.
+"Evening: Dinner in Paia"
+Head to the town of Paia for dinner.
+Explore the vibrant artsy atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 6: Snorkel at Turtle Town and Farewell`,
+        dayContent: `
+        "Morning: Snorkel at Turtle Town"
+Take a boat trip to Turtle Town for snorkeling.
+Encounter sea turtles and colorful marine life.
+"Afternoon: Final Beach Day"
+Spend your final afternoon at a favorite beach.
+Soak in the sun and enjoy the ocean.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a beachfront restaurant.
+Reflect on your week in Maui.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
-    numOfDaysToStay: 7,
+    numOfDaysToStay: 6,
   },
   {
     name: 'New Orlans',
     imageUrl: '',
     country: 'America',
-    description:
-      "New Orleans, a vibrant gumbo of history, music, and spice, whispers tales of Creole charm and Bourbon Street revelry. Imagine moss-draped oaks shading cobblestone streets lined with pastel facades, their wrought-iron balconies festooned with blooming jasmine. Brass bands erupt in joyous cacophony, their infectious rhythms echoing through alleyways and jazz clubs alike, the air thrumming with a city that never sleeps.For the bon vivant, New Orleans is a feast for the senses. Savor blackened catfish Po'boys dripping with spicy remoulade and sip mint juleps on bustling balconies as street performers serenade you with soulful tunes. Explore ancient cemeteries draped in Spanish moss, their haunted beauty whispering stories of pirates and voodoo queens. Lose yourself in the pulsing heart of Bourbon Street, a kaleidoscope of flashing neon and revelers draped in Mardi Gras feathers, where every night feels like a celebration.But New Orleans isn't just about indulgence. Wander verdant City Park, a haven of ancient oaks and serene sculptures, where moss-covered lagoons reflect the sky. Discover vibrant murals adorning crumbling brick walls, each splash of color a vibrant testament to the city's artistic spirit. Learn the stories of resilient communities in the Faubourg Marigny and Treme, their rich heritages echoing in soulful cuisine and rhythmic second lines.As the sun dips below the Mississippi, painting the river in fiery hues, New Orleans transforms into a canvas of twinkling lights reflected on the dark water. Hop on a paddle-wheeler cruise, serenaded by jazz bands as you glide past illuminated steamboats and moonlit mansions. Gather around crackling bonfires in hidden courtyards, sharing stories under the starlit sky while the scent of jambalaya mingles with the sweet notes of a saxophone. New Orleans is more than just a city; it's a pulsing, living melody that vibrates in your soul. It's an invitation to lose yourself in the rhythm of jazz, to savor the spice of life, and to discover the magic that lies beneath the moss-draped oaks and glittering facades. So, pack your dancing shoes and open heart, wander its cobbled streets and hidden courtyards, and let New Orleans whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: French Quarter Introduction`,
+        dayContent: `
+        "Morning: Arrival in New Orleans"
+Arrive at Louis Armstrong New Orleans International Airport and check into your accommodation, preferably in the French Quarter.
+"Afternoon: French Quarter Exploration"
+Spend the afternoon strolling through the iconic French Quarter.
+Visit Jackson Square, Royal Street, and Bourbon Street.
+"Evening: Dinner and Jazz Music"
+Have dinner at a local Creole or Cajun restaurant.
+Enjoy live jazz music at one of the many renowned jazz clubs in the French Quarter.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Garden District and Uptown`,
+        dayContent: `
+        "Morning: Breakfast at Café du Monde"
+Start your day with breakfast at Café du Monde for beignets and coffee.
+Take the St. Charles Avenue streetcar to the Garden District.
+Explore the historic mansions and oak-lined streets.
+"Afternoon: Lunch on Magazine Street"
+Have lunch at one of the charming eateries on Magazine Street.
+Explore the boutiques and galleries.
+Visit Audubon Park for a leisurely stroll and maybe a picnic.
+"Evening: Dinner at Commander's Palace"
+Enjoy dinner at the iconic Commander's Palace in the Garden District.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Historic and Cultural Sites`,
+        dayContent: `
+        "Morning: National WWII Museum"
+Spend the morning at the National WWII Museum.
+Explore exhibits highlighting the war's impact on New Orleans.
+"Afternoon: Lunch in Warehouse District"
+Have lunch in the Warehouse District, known for its artsy vibe and trendy restaurants.
+Visit the Ogden Museum of Southern Art to appreciate Southern masterpieces.
+"Evening: Dinner and Live Music"
+Enjoy dinner at a restaurant in the Arts/Warehouse District.
+Attend a live music performance at a nearby venue.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Swamp Tour and Culinary Delights`,
+        dayContent: `
+        "Morning: Swamp Tour"
+Take a morning swamp tour to explore Louisiana's bayous and encounter wildlife.
+"Afternoon: Lunch in the French Quarter"
+Return to the French Quarter for lunch at a classic Creole restaurant.
+Experience the unique jazz at Preservation Hall in the afternoon.
+"Evening: Dinner at French Market"
+Have dinner at stalls in the lively French Market.
+Enjoy the vibrant atmosphere and street performers.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Music and Entertainment`,
+        dayContent: `
+        "Morning: Breakfast at Stanley"
+Start your day with breakfast at Stanley in Jackson Square.
+Explore Frenchmen Street, known for its live music venues and vibrant nightlife.
+"Afternoon: Lunch at Coop's Place"
+Have lunch at Coop's Place for classic New Orleans cuisine.
+Walk through the Treme neighborhood, rich in African American and Creole culture.
+"Evening: Dinner at Restaurant R'evolution"
+Enjoy a fine dining experience at Restaurant R'evolution in the French Quarter.
+        `,
+      },
+      {
+        dayHeading: `Day 6: Riverfront and Departure`,
+        dayContent: `
+        "Morning: Café Beignet at Riverfront"
+Have breakfast at Café Beignet while overlooking the Mississippi River.
+Take a morning cruise on the Steamboat Natchez for riverfront views.
+"Afternoon: Lunch at Jax Brewery"
+Have lunch at Jax Brewery on the riverfront.
+Explore the shops and art galleries in the area.
+"Evening: Farewell Dinner"
+Enjoy your farewell dinner at a waterfront restaurant.
+Reflect on your week in the vibrant city of New Orleans.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
-    numOfDaysToStay: 7,
+    numOfDaysToStay: 6,
   },
   {
     name: 'New York City',
     imageUrl: '',
     country: 'America',
-    description:
-      "New York City, a concrete jungle draped in steel and ambition, whispers tales of sky-kissing towers and restless energy. Imagine towering skyscrapers piercing the clouds, their mirrored facades reflecting the sun's glare and painting the sky in a mesmerizing grid. Yellow cabs weave through bustling avenues, a pulsating river of steel weaving through canyons of dreams. Street performers erupt in improvised symphonies, their melodies mingling with the city's constant hum, a soundtrack to endless possibilities.For the dreamer, New York is a playground of endless possibilities. Climb the iconic Empire State Building, the city sprawled beneath you like a miniature metropolis, and inhale the heady scent of ambition. Explore world-class museums brimming with artistic treasures, their hushed halls whispering stories of empires past and futures yet to be. Witness Broadway's dazzling lights paint the night sky, a kaleidoscope of costumes and music capturing the city's vibrant spirit. But New York isn't just about glittering facades. Wander hidden alleyways adorned with vibrant murals, each spray of color a testament to the city's gritty resilience. Discover hidden oases like Central Park, a verdant escape amidst the concrete jungle, where squirrels scamper among towering trees and lovers whisper secrets beneath ancient oaks. Learn the stories of diverse communities in Chinatown's dim sum houses and Harlem's gospel choirs, their vibrant cultures woven into the city's rich tapestry. As the sun dips below the Hudson River, painting the skyscrapers in fiery hues, New York transforms into a canvas of twinkling lights reflected on the water. Sail across the harbor, Lady Liberty welcoming you with her torch held high, a symbol of hope etched against the twilight sky. Gather on rooftop bars, the city lights shimmering below like a fallen Milky Way, sharing stories under the stars while the distant wail of sirens sings a bittersweet lullaby. New York City is more than just a metropolis; it's a symphony of concrete and chaos, resilience and hope. It's an invitation to lose yourself in the whirlwind of ambition, to find solace in hidden gardens, and to discover the beating heart of humanity pulsating beneath the towering steel. So, pack your dreams and adventurous spirit, wander its avenues and hidden alleys, and let New York City whisper its captivating story into your soul.  ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Lower Manhattan`,
+        dayContent: `
+        "Afternoon: Arrival in NYC"
+Arrive at your accommodation and settle in.
+Choose a hotel in Lower Manhattan for easy access to downtown attractions.
+"Afternoon: Stroll in Battery Park"
+Take a leisurely stroll in Battery Park and enjoy views of the Statue of Liberty.
+"Evening: Dinner in Tribeca"
+Have dinner in the trendy Tribeca neighborhood.
+Explore the cobblestone streets and boutique shops.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Financial District and Brooklyn`,
+        dayContent: `
+        "Morning: Visit One World Observatory"
+Start your day with a visit to One World Observatory at One World Trade Center.
+Explore the 9/11 Memorial and Museum.
+"Afternoon: Lunch in Chinatown"
+Have lunch in Chinatown, known for its diverse culinary offerings.
+Explore the vibrant streets and markets.
+Walk across the Brooklyn Bridge for panoramic views of the city skyline.
+"Evening: Dinner in DUMBO"
+Enjoy dinner in DUMBO (Down Under the Manhattan Bridge Overpass).
+Take in the stunning views of Manhattan and the bridges.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Midtown Manhattan`,
+        dayContent: `
+        "Morning: Explore Central Park"
+Spend the morning exploring Central Park.
+Visit iconic spots like Bethesda Terrace and Bow Bridge.
+"Afternoon: Lunch at The Plaza Hotel"
+Have lunch at The Plaza Hotel, an iconic New York landmark.
+Explore Museum Mile along Fifth Avenue.
+Visit the Metropolitan Museum of Art or the Guggenheim Museum.
+"Evening: Times Square and Broadway Show"
+Experience the vibrant energy of Times Square.
+Attend a Broadway show in the Theater District.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Uptown Manhattan`,
+        dayContent: `
+        "Morning: Harlem Exploration"
+Spend the morning exploring Harlem.
+Visit the Apollo Theater and stroll along historic streets.
+"Afternoon: Lunch in Harlem"
+Have lunch at a local soul food restaurant in Harlem.
+Experience the rich cultural heritage of the neighborhood.
+Explore the Columbia University campus and Morningside Heights.
+Visit Riverside Church and Grant's Tomb.
+"Evening: Dinner on the Upper West Side"
+Enjoy dinner at a restaurant on the Upper West Side.
+Explore the neighborhood's cultural institutions.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Greenwich Village and Chelsea`,
+        dayContent: `
+        "Morning: Washington Square Park"
+Start your day in Washington Square Park.
+Admire the Washington Arch and the vibrant atmosphere.
+"Afternoon: Lunch in Greenwich Village"
+Have lunch in Greenwich Village, known for its eclectic charm.
+Explore the streets and historic sites like Stonewall Inn.
+Walk the High Line Park, an elevated urban park in Chelsea.
+Enjoy art installations and city views.
+"Evening: Dinner in Meatpacking District"
+Have dinner in the trendy Meatpacking District.
+Experience the nightlife in this vibrant area.
+        `,
+      },
+      {
+        dayHeading: `Day 6: Queens and Flushing`,
+        dayContent: `
+        "Morning: Queens Botanical Garden"
+Start your day with a visit to Queens Botanical Garden.
+Explore the diverse plant collections.
+"Afternoon: Lunch in Flushing"
+Have lunch in Flushing, a diverse neighborhood with a thriving food scene.
+Explore Flushing Meadows-Corona Park.
+Visit The Queens Museum in Flushing Meadows-Corona Park.
+Explore exhibits, including the Panorama of the City of New York.
+"Evening: Dinner in Astoria"
+Have dinner in Astoria, known for its Greek cuisine.
+Explore the neighborhood's cultural attractions.
+        `,
+      },
+      {
+        dayHeading: `Day 7: Staten Island and Departure`,
+        dayContent: `
+        "Morning: Staten Island Ferry"
+Take the Staten Island Ferry for stunning views of the Statue of Liberty and the Manhattan skyline.
+"Afternoon: Staten Island Exploration"
+Spend the afternoon exploring Staten Island.
+Visit Snug Harbor Cultural Center and Botanical Garden.
+"Evening: Farewell Dinner"
+Have a farewell dinner at a restaurant of your choice.
+Reflect on your week in the city that never sleeps.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
     numOfDaysToStay: 7,
@@ -363,18 +2441,194 @@ export const Places: PlacesDataTypes[] = [
     name: 'San Fransisco',
     imageUrl: '',
     country: 'America',
-    description:
-      "San Francisco, a salty siren draped in golden hills and cable car chimes, whispers tales of Victorian charm and ocean-fueled grit. Imagine iconic bridges piercing the sky, their graceful arches painted in the blush of sunrise, their cables humming with the murmur of a city forever on the move. Painted Victorian ladies line cobblestone streets, their colorful facades adorned with vibrant blooms, a defiant splash of beauty against the ever-present ocean fog. For the free spirit, San Francisco is a playground of endless possibilities. Ride the clanging cable cars up steep hills, the city unfolding beneath you like a storybook map. Explore bustling piers teeming with fresh seafood and barking sea lions, the salty air invigorating your senses. Hike rugged trails overlooking crashing waves, the Pacific's raw power mirrored in the steely gaze of Alcatraz Island. But San Francisco isn't just about rugged beauty. Wander flower-filled Golden Gate Park, a verdant oasis where Japanese gardens whisper secrets and museums brim with artistic treasures. Discover murals adorning Chinatown's labyrinthine alleys, each brushstroke a vibrant tale of resilience and tradition. Savor steaming bowls of clam chowder in cozy waterfront cafes, the scent of sourdough bread mingling with the fog's misty embrace. As the sun dips below the Marin Headlands, painting the bridge in fiery hues, San Francisco transforms into a canvas of twinkling lights reflected on the bay. Hop on a ferry to Sausalito, its colorful houses bathed in a golden glow, and sip cocktails on a waterfront deck, the city lights shimmering across the water like scattered stardust. Gather around crackling bonfires on sandy beaches, sharing stories under the starlit sky while the mournful cries of foghorns sing a haunting lullaby. San Francisco is more than just a city; it's a poem etched in fog and sunshine, a melody of seagulls and cable car chimes. It's an invitation to chase golden gate dreams, embrace the ocean's wild spirit, and discover the soul of a city that dances to its own rhythm. So, pack your curiosity and a good pair of shoes, wander its winding streets and coastal cliffs, and let San Francisco whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Downtown San Francisco`,
+        dayContent: `
+        "Morning : Arrival in San Francisco"
+Arrive at San Francisco International Airport and check into your accommodation.
+"Afternoon : Union Square and Shopping"
+Spend the afternoon exploring Union Square and nearby shopping districts.
+Enjoy a leisurely walk around the area.
+"Evening: Dinner in Chinatown"
+Have dinner in San Francisco's historic Chinatown.
+Explore the vibrant streets and shops.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Alcatraz Island and Fisherman's Wharf`,
+        dayContent: `
+        "Morning: Alcatraz Island Tour" 
+Take a morning ferry to Alcatraz Island.
+Explore the infamous prison and enjoy breathtaking views of the city.
+"Afternoon: Lunch at Fisherman's Wharf"
+Have lunch at Fisherman's Wharf, a bustling waterfront area.
+Explore Pier 39 and its sea lions.
+Visit Ghirardelli Square for some chocolate indulgence.
+Enjoy the scenic views of the bay.
+"Evening: Dinner at Boudin Bakery"
+Have dinner at Boudin Bakery and try their famous sourdough bread.
+Walk along the waterfront and enjoy the evening atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Golden Gate Park and Haight-Ashbury`,
+        dayContent: `
+        "Morning: Explore Golden Gate Park"
+Spend the morning exploring Golden Gate Park.
+Visit the California Academy of Sciences, Japanese Tea Garden, and Stow Lake.
+"Afternoon: Lunch in Inner Sunset"
+Have lunch in the Inner Sunset neighborhood.
+Explore the local shops and cafes.
+Visit the iconic Haight-Ashbury district, known for its counterculture history.
+Explore vintage shops and street art.
+"Evening: Dinner in NOPA"
+Have dinner in the NOPA (North of the Panhandle) neighborhood.
+Experience the local culinary scene.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Twin Peaks and Castro District`,
+        dayContent: `
+        "Morning: Twin Peaks Viewpoint"
+Start your day with a visit to Twin Peaks for panoramic views of the city.
+Enjoy the morning breeze.
+"Afternoon: Lunch in Castro"
+Have lunch in the vibrant Castro District.
+Explore the LGBTQ+ history and culture.
+Visit Mission Dolores Park for a relaxing afternoon.
+Enjoy the city skyline and diverse community.
+"Evening: Dinner in Mission District"
+Have dinner in the Mission District, known for its culinary diversity.
+Explore the neighborhood's vibrant street art.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Embarcadero and Farewell`,
+        dayContent: `
+        "Morning: Embarcadero and Ferry Building"
+Spend the morning along the Embarcadero.
+Explore the Ferry Building Marketplace for artisanal goods.
+"Afternoon: Bay Cruise"
+Take a bay cruise for stunning views of the Golden Gate Bridge and Alcatraz.
+Enjoy the sea breeze.
+Have lunch at one of the waterfront restaurants.
+Enjoy your last meal with a view.
+"Evening: Farewell Dinner in Nob Hill"
+Have a farewell dinner in Nob Hill.
+Reflect on your week in San Francisco.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
-    numOfDaysToStay: 7,
+    numOfDaysToStay: 5,
   },
   {
     name: 'Washington D.C.',
     imageUrl: '',
     country: 'America',
-    description:
-      "Washington D.C., a marble monument to democracy, whispers tales of power, progress, and poignant memories. Imagine gleaming white structures reflecting the sun's glow, their neoclassical facades etched with stories of founding fathers and pivotal moments. Broad avenues lined with towering trees hum with the energy of lobbyists and diplomats, the city's pulse thrumming with the heartbeat of a nation.For the history buff, D.C. is a playground of open-air museums. Stand awestruck beneath the soaring obelisk of the Washington Monument, its tip tracing the clouds, and feel the weight of history in its shadow. Explore the hallowed halls of the Capitol Building, where laws are shaped and debates echo, and imagine the whispered secrets within its ornate chambers. Follow the footsteps of presidents at the White House, its pristine facade a symbol of power and responsibility. But D.C. isn't just about marble and monuments. Wander through vibrant street markets like Eastern Market, overflowing with colorful produce and handmade crafts, where the city's diverse cultural tapestry is woven into every stall. Explore quirky neighborhoods like Georgetown, its cobblestone streets lined with trendy cafes and art galleries, where history mingles with modern cool. Savor fresh seafood on bustling waterfront piers, the salty air and laughter a welcome respite from the political hum. As the sun dips below the Potomac River, painting the sky in fiery hues, D.C. transforms into a canvas of twinkling lights reflecting on the water. Cruise along the river at dusk, gazing at the illuminated monuments like silent sentinels against the twilight sky. Gather around crackling bonfires on rooftop bars, the city lights shimmering below like a miniature metropolis, and share stories under the stars while the whisper of history lingers in the air. Washington D.C. is more than just a capital city; it's a living, breathing testament to America's journey. It's an invitation to lose yourself in the echoes of history, to feel the thrum of political power, and to discover the vibrant spirit that beats within the heart of this national stage. So, pack your curiosity and open mind, wander its avenues and hidden alleys, and let D.C. whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: National Mall and Monuments`,
+        dayContent: `
+        "Morning: Arrival in Washington, D.C"
+Arrive at Ronald Reagan Washington National Airport and check into your accommodation.
+"Afternoon: National Mall Exploration"
+Spend the afternoon exploring the National Mall.
+Visit the Washington Monument, Lincoln Memorial, and Vietnam Veterans Memorial.
+"Evening: Dinner in Penn Quarter"
+Have dinner in Penn Quarter, known for its diverse culinary scene.
+Stroll around the area and enjoy the lively atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Smithsonian Museums`,
+        dayContent: `
+        "Morning: Smithsonian Museums"
+Spend the morning visiting the Smithsonian Museums on the National Mall.
+Explore the National Air and Space Museum or the National Museum of American History.
+"Afternoon: Lunch at the National Gallery of Art"
+Have lunch at the National Gallery of Art Sculpture Garden.
+Explore the museum's impressive art collections.
+"Evening: Dinner in Capitol Hill"
+Have dinner in Capitol Hill, near the U.S. Capitol.
+Explore the neighborhood and perhaps visit Eastern Market.
+        `,
+      },
+      {
+        dayHeading: `Day 3: U.S. Capitol and Library of Congress`,
+        dayContent: `
+        "Morning: U.S. Capitol Tour"
+Take a guided tour of the U.S. Capitol.
+Explore the Capitol Visitor Center and the surrounding grounds.
+"Afternoon: Library of Congress"
+Visit the Library of Congress, known for its stunning architecture and vast collections.
+Explore the Thomas Jefferson Building.
+"Evening: Dinner in Union Station"
+Have dinner in Union Station, a historic transportation hub.
+Enjoy the grandeur of the station's architecture.
+        `,
+      },
+      {
+        dayHeading: `Day 4: National Archives and Spy Museum`,
+        dayContent: `
+        "Morning: National Archives"
+Begin your day at the National Archives to view the Declaration of Independence, Constitution, and Bill of Rights.
+"Afternoon: Lunch at Old Ebbitt Grill"
+Have lunch at the historic Old Ebbitt Grill, located near the White House.
+Spend the afternoon at the International Spy Museum.
+Explore exhibits on espionage and intelligence.
+"Evening: Dinner in Foggy Bottom"
+Have dinner in Foggy Bottom, a neighborhood known for its historic character.
+Enjoy a relaxing evening.
+        `,
+      },
+      {
+        dayHeading: `Day 5: White House and Lafayette Square`,
+        dayContent: `
+        "Morning: White House Tour"
+Take a tour of the White House (if available).
+Explore Lafayette Square and nearby St. John's Church.
+"Afternoon: Lunch at Founding Farmers"
+Have lunch at Founding Farmers, a popular farm-to-table restaurant.
+Visit the National Geographic Museum for informative exhibits.
+Explore the museum's captivating content.
+"Evening: Dinner in Dupont Circle"
+Have dinner in Dupont Circle, a vibrant neighborhood.
+Enjoy the eclectic mix of shops and restaurants.
+        `,
+      },
+      {
+        dayHeading: `Day 6: Arlington National Cemetery and Pentagon`,
+        dayContent: `
+        "Morning: Arlington National Cemetery"
+Spend the morning at Arlington National Cemetery.
+Visit the Tomb of the Unknown Soldier and the Arlington House.
+"Afternoon: Pentagon Tour"
+Take a guided tour of the Pentagon (advance reservations required).
+Explore the 9/11 Pentagon Memorial.
+"Evening: Dinner in Crystal City"
+Have dinner in Crystal City, known for its diverse dining options.
+Reflect on the day's experiences.
+        `,
+      },
+      {
+        dayHeading: `Day 7: Georgetown and Kennedy Center`,
+        dayContent: `
+        "Morning: Georgetown Exploration"
+Spend the morning exploring Georgetown.
+Walk along the historic streets and visit the C&O Canal.
+"Afternoon: Lunch at M Street"
+Have lunch on M Street in Georgetown, known for its trendy shops and eateries.
+Take a guided tour of the John F. Kennedy Center for the Performing Arts.
+Enjoy views of the Potomac River from the terrace.
+"Evening: Farewell Dinner in Georgetown"
+Have a farewell dinner in Georgetown.
+Reflect on your week in Washington, D.C.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
     numOfDaysToStay: 7,
@@ -383,8 +2637,116 @@ export const Places: PlacesDataTypes[] = [
     name: 'Yellowstone National Park',
     imageUrl: '',
     country: 'America',
-    description:
-      "Yellowstone National Park, a geothermal wonderland painted in vivid hues, whispers tales of fiery geysers and ancient forests. Imagine prismatic hot springs bubbling with vibrant colors, their steam rising like ethereal spirits amidst snow-capped peaks. Lush meadows burst with wildflowers, their fragrance mingling with the sulfurous breath of the earth, and towering geysers erupt in dramatic plumes, spraying the sky with rainbow-kissed mist. For the adventurer, Yellowstone is a playground of rugged terrain and hidden wonders. Hike through verdant forests teeming with bison and elk, their majestic presence a reminder of the untamed spirit. Kayak across glassy lakes reflecting snow-capped mountains, the silence broken only by the paddle's gentle splash. Descend into the Grand Canyon of the Yellowstone, its colorful cliffs whispering secrets of volcanic fury, and marvel at the Lower Falls, its thunderous roar echoing through the valley. But Yellowstone isn't just about geysers and waterfalls. Explore hidden mudpots bubbling like primordial cauldrons, their gurgling symphony a testament to the Earth's restless heart. Discover ancient fossils nestled in rock layers, each whisper of a prehistoric past. Learn the stories of the Shoshone and Bannock people, their reverence for this sacred land echoing in the wind whistling through the pines. As the sun dips below the Absaroka Range, painting the sky in fiery hues, Yellowstone transforms into a canvas of twinkling stars reflected in geothermal pools. Gather around crackling campfires under a velvet sky, sharing stories of geyser eruptions and grizzly encounters. Sleep to the lullaby of wolves howling at the moon, feeling the pulse of this ancient land beneath your feet. Yellowstone National Park is more than just a national park; it's a living museum of geothermal wonders, a tapestry of rugged beauty, and a sanctuary for wildlife. It's an invitation to lose yourself in the embrace of nature's raw power, to feel the earth's fiery breath, and to discover the soul of a landscape painted by millennia of volcanic fury. So, pack your sense of wonder and adventurous spirit, wander its trails and boardwalks, and let Yellowstone whisper its captivating story into your soul.",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival in Yellowstone`,
+        dayContent: `
+        "Morning: Arrival in Yellowstone"
+Arrive at Yellowstone and check into your accommodation.
+Familiarize yourself with the park's map and regulations.
+"Afternoon: West Thumb Geyser Basin"
+Begin your exploration with a visit to the West Thumb Geyser Basin.
+Marvel at the colorful hot springs along the edge of Yellowstone Lake.
+"Evening: Dinner in Grant Village"
+Have dinner in Grant Village, located near West Thumb.
+Enjoy a peaceful evening in the park.
+        `,
+      },
+      {
+        dayHeading: `Day 2: Old Faithful and Upper Geyser Basin`,
+        dayContent: `
+        "Morning: Old Faithful"
+Start your day at Old Faithful.
+Witness the iconic geyser erupt and explore the Old Faithful Inn.
+Hike the boardwalks of the Upper Geyser Basin.
+Visit other geysers like Castle Geyser and Grand Geyser.
+"Afternoon: Lunch at Old Faithful Lodge"
+Have lunch at Old Faithful Lodge.
+Relax and enjoy the scenic surroundings.
+Visit the Morning Glory Pool, known for its vibrant colors.
+Explore the nearby features.
+Evening: Dinner at Snow Lodge
+Have dinner at the Old Faithful Snow Lodge.
+Consider attending an evening ranger program.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Canyon Village and Grand Canyon of the Yellowstone`,
+        dayContent: `
+        "Morning: Canyon Village"
+Drive to Canyon Village and explore the visitor center.
+Plan your day to visit the Grand Canyon of the Yellowstone.
+"Afternoon: Grand Canyon of the Yellowstone"
+Hike the South Rim Trail for stunning views of the canyon.
+Visit Artist Point for panoramic views of the Lower Falls.
+"Evening: Dinner in Canyon Village"
+Have dinner in Canyon Village.
+Relax and enjoy the evening in the park.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Lamar Valley and Wildlife Watching`,
+        dayContent: `
+        "Morning: Lamar Valley"
+Spend the morning in Lamar Valley, known for wildlife viewing.
+Look for bison, elk, wolves, and other animals.
+"Afternoon: Picnic Lunch in Lamar Valley"
+Have a picnic lunch in Lamar Valley.
+Continue wildlife watching or embark on a short hike.
+Visit Tower Fall, a 132-foot waterfall.
+Explore the area and nearby viewpoints.
+"Evening: Dinner in Cooke City"
+Have dinner in Cooke City, the nearest town to Lamar Valley.
+Enjoy the small-town atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Mammoth Hot Springs and Gardiner`,
+        dayContent: `
+        "Morning: Mammoth Hot Springs"
+Explore the Mammoth Hot Springs area.
+Walk the boardwalks and terraces.
+"Afternoon: Lunch in Mammoth Village"
+Have lunch in Mammoth Village.
+Visit the historic Fort Yellowstone.
+Explore Gardiner, Montana, the north entrance town.
+Visit the Roosevelt Arch and the Yellowstone Heritage Center.
+"Evening: Dinner in Gardiner"
+Have dinner in Gardiner.
+Enjoy the evening in this charming gateway town.
+        `,
+      },
+      {
+        dayHeading: `Day 6: Norris Geyser Basin and Madison Junction`,
+        dayContent: `
+        "Morning: Norris Geyser Basin"
+Head to Norris Geyser Basin.
+Explore the geothermal features, including Steamboat Geyser.
+"Afternoon: Lunch at Madison Junction"
+Have lunch at Madison Junction.
+Enjoy a relaxing picnic along the Madison River.
+Drive the Firehole Canyon Drive for scenic views.
+Stop at Firehole Falls for a picturesque spot.
+"Evening: Dinner at Old Faithful"
+Return to the Old Faithful area for dinner.
+Enjoy the evening ambiance around the geyser.
+        `,
+      },
+      {
+        dayHeading: `Day 7: West Yellowstone and Departure`,
+        dayContent: `
+        "Morning: West Yellowstone Exploration"
+Head to West Yellowstone, a town just outside the park.
+Explore the Grizzly & Wolf Discovery Center.
+"Afternoon: Lunch in West Yellowstone"
+Have lunch in West Yellowstone.
+Visit the Yellowstone Historic Center.
+"Evening: Departure"
+If time allows, enjoy a final stroll in West Yellowstone.
+Depart from Yellowstone National Park.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
     numOfDaysToStay: 7,
@@ -393,8 +2755,110 @@ export const Places: PlacesDataTypes[] = [
     name: 'Yosemite National Park',
     imageUrl: '',
     country: 'America',
-    description:
-      "Yosemite National Park, a granite cathedral sculpted by glaciers and painted by waterfalls, whispers tales of soaring cliffs and liquid thunder. Imagine towering monoliths like El Capitan and Half Dome piercing the azure sky, their sheer faces reflecting the golden sun, their shadows weaving across emerald forest below. Cascading waterfalls erupt in shimmering veils, their joyous roars echoing through Yosemite Valley, a symphony of nature's power and grace. For the adventurer, Yosemite is a wonderland of vertical challenges and hidden delights. Hike the mist-laden Mist Trail, ascending granite steps beneath cascading falls, the spray cooling your face like a celestial shower. Scale Half Dome's cables, reaching dizzying heights for a panorama that will forever etch itself in your memory. Kayak on glassy Mirror Lake, the reflected cliffs creating a surreal world of inverted majesty. But Yosemite isn't just about adrenaline rushes. Wander through fragrant meadows bursting with wildflowers, their vibrant hues rivaling the granite giants. Explore ancient sequoia groves, their towering redwoods silent sentinels whispering stories of millennia past. Learn the traditions of the Miwok people, their reverence for this sacred land echoing in the wind sighing through the pines. As the sun dips below the granite walls, painting the sky in fiery hues, Yosemite transforms into a canvas of twinkling stars reflected on glassy lakes. Gather around crackling campfires under a velvet sky, sharing stories of daring climbs and encounters with wildlife. Sleep to the lullaby of rushing water, feeling the pulse of this ancient landscape beneath your feet. Yosemite National Park is more than just a stunning sight; it's a living tapestry of ancient granite, cascading water, and vibrant life. It's an invitation to lose yourself in the embrace of nature's grandeur, to feel the mist on your face, and to discover the soul of a landscape etched by the hand of time. So, pack your hiking boots and sense of wonder, wander its trails and hidden meadows, and let Yosemite whisper its captivating story into your soul. ",
+    description: [
+      {
+        dayHeading: `Day 1: Arrival and Yosemite Valley`,
+        dayContent: `
+        "Morning: Arrival in Yosemite"
+Arrive at Yosemite National Park and check into your accommodation.
+Obtain park maps and information at the visitor center.
+"Afternoon: Yosemite Valley"
+Spend the afternoon exploring Yosemite Valley.
+Visit iconic viewpoints like Tunnel View and Bridalveil Fall.
+"Evening: Dinner in Yosemite Valley"
+Have dinner at one of the dining options in Yosemite Valley.
+Enjoy the serene evening atmosphere
+        `,
+      },
+      {
+        dayHeading: `Day 2: Half Dome and Mist Trail`,
+        dayContent: `
+        "Morning: Half Dome Viewpoints"
+Begin your day with viewpoints showcasing Half Dome.
+Explore Sentinel Dome for panoramic vistas.
+Hike the Mist Trail to experience the spray of Vernal and Nevada Falls.
+Enjoy lunch at the top.
+"Afternoon: John Muir Trail Descent"
+Descend via the John Muir Trail for a different perspective.
+Explore the Happy Isles area.
+"Evening: Dinner at Curry Village"
+Have dinner at Curry Village.
+Relax and reflect on the day's adventures.
+        `,
+      },
+      {
+        dayHeading: `Day 3: Mariposa Grove of Giant Sequoias`,
+        dayContent: `
+        "Morning: Mariposa Grove"
+Head to Mariposa Grove to see the giant sequoias.
+Explore the Grizzly Giant and California Tunnel Tree.
+"Afternoon: Picnic Lunch in Mariposa Grove"
+Enjoy a picnic lunch surrounded by ancient trees.
+Take a leisurely stroll among the sequoias.
+Visit Wawona and explore the historic district.
+Stop by the Pioneer Yosemite History Center.
+"Evening: Dinner in Wawona"
+Have dinner in Wawona.
+Experience the quiet charm of this area.
+        `,
+      },
+      {
+        dayHeading: `Day 4: Glacier Point and Taft Point`,
+        dayContent: `
+        "Morning: Glacier Poin"
+Drive to Glacier Point for breathtaking views.
+Explore the area and take in panoramic vistas.
+"Afternoon: Hike to Taft Point"
+Hike to Taft Point for stunning views of El Capitan and Yosemite Valley.
+Enjoy a picnic lunch with a view.
+"Evening: Dinner at The Ahwahnee"
+Have dinner at The Ahwahnee, a historic hotel in Yosemite.
+Relish the elegant dining experience.
+        `,
+      },
+      {
+        dayHeading: `Day 5: Tenaya Lake and Tuolumne Meadows`,
+        dayContent: `
+        "Morning: Tenaya Lake"
+Spend the morning at Tenaya Lake.
+Enjoy the pristine alpine setting and, if interested, go for a swim.
+"Afternoon: Tuolumne Meadows"
+Drive to Tuolumne Meadows for high-country scenery.
+Explore the meadows and the Tuolumne Visitor Center.
+"Evening: Dinner in Tuolumne Meadows"
+Have dinner in Tuolumne Meadows.
+Experience the tranquility of this alpine region.
+        `,
+      },
+      {
+        dayHeading: `Day 6: High Sierra Trails and Waterfalls`,
+        dayContent: `
+        "Morning: High Sierra Trails"
+Choose a high-country trail, such as Cathedral Lakes or Clouds Rest.
+Enjoy a morning hike with panoramic views.
+"Afternoon: Waterfalls"
+Visit other waterfalls in Yosemite Valley.
+Explore Lower Yosemite Fall and Upper Yosemite Fall.
+"Evening: Dinner at Yosemite Village"
+Have dinner at Yosemite Village.
+Reflect on your week and enjoy the vibrant atmosphere.
+        `,
+      },
+      {
+        dayHeading: `Day 7: Sunrise at Glacier Point and Departure`,
+        dayContent: `
+        "Morning: Sunrise at Glacier Point"
+Rise early for a sunrise visit to Glacier Point.
+Witness the first light illuminating the Yosemite Valley.
+"Afternoon: Lunch in Yosemite Valley"
+Have breakfast in Yosemite Valley.
+If time allows, visit any missed spots.
+"Evening: Departure"
+Check out of your accommodation.
+Depart from Yosemite National Park.
+        `,
+      },
+    ],
     cost: 75000,
     reviews: 5,
     numOfDaysToStay: 7,
