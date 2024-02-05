@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "data:import": "ts-node seeder.ts",
+    "data:delete": "ts-node seeder.ts -d"
   },
   "author": "Deva92dev",
   "license": "ISC",

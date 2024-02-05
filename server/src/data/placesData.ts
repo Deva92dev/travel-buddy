@@ -1,22 +1,8 @@
-export interface PlacesDataTypes {
-  name: string;
-  imageUrl: string;
-  country: string;
-  description: DayInfo[];
-  cost: number;
-  reviews: number;
-  numOfDaysToStay: number;
-}
-
-interface DayInfo {
-  dayHeading: string;
-  dayContent: string;
-}
-
-const Places: PlacesDataTypes[] = [
+export const PlacesData = [
   {
     name: 'Cinque terre',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attEQ2bOoLlw9OlCy?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -96,7 +82,8 @@ Reflect on your Cinque Terre adventure.
   },
   {
     name: 'Rome',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attFzwdVAQL5LhyF2?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -177,7 +164,8 @@ Enjoy the vibrant atmosphere and reflect on your time in Rome.
   },
   {
     name: 'Florence',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attxoBALO24KX90qv?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -255,7 +243,8 @@ Reflect on your time in this beautiful city.
   },
   {
     name: 'Venice ',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attxjtSyOuSHa712p?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -336,7 +325,8 @@ Enjoy the sunset views of Venice from the island.
   },
   {
     name: 'The Amalfi Coast',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att3ORvC00OS66SYt?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -415,7 +405,8 @@ Witness the sunset from the boat as you return to your starting point.
   },
   {
     name: 'Pompeii',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attYMUxX1UJsGTNgM?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -492,7 +483,8 @@ Conclude your journey with a traditional Neapolitan pizza in the city where pizz
   },
   {
     name: 'Matera',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attZMOe7gDxthbDm2?blocks=hide',
     country: 'Italy',
     description: [
       {
@@ -571,7 +563,8 @@ Reflect on your time in this unique and historical city.
   },
   {
     name: 'Daintree Forest',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attzIqrIwmvNDtDYY?blocks=hide',
     country: 'Australia',
     description: [
       {
@@ -623,7 +616,8 @@ Depart from Port Douglas
   },
   {
     name: 'The Great Barrier reef',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attTaliGrLqVL7dvd?blocks=hide',
     country: 'Australia',
     description: [
       {
@@ -679,7 +673,8 @@ Enjoy a farewell dinner at one of the local seafood restaurants.
   },
   {
     name: 'Tasmania',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att9LKcA6Vu1zTcw2?blocks=hide',
     country: 'Australia',
     description: [
       {
@@ -731,7 +726,8 @@ Consider staying in a wilderness lodge for a unique and immersive experience
   },
   {
     name: 'Uluru & Kata Tjuta',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attbjoXhci50k9fnw?blocks=hide',
     country: 'Australia',
     description: [
       {
@@ -783,7 +779,8 @@ Depart from Ayers Rock Resort.
   },
   {
     name: 'Whiteheaven Beach',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attehKQaOY3mXVd3b?blocks=hide',
     country: 'Australia',
     description: [
       {
@@ -837,7 +834,8 @@ Relax or explore Airlie Beach for your final evening.
   },
   {
     name: 'Copacabana Beach',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attTvinqj0LZci1Cr?blocks=hide',
     country: 'Brazil',
     description: [
       {
@@ -917,7 +915,8 @@ Reflect on the memories created during your stay.
   },
   {
     name: 'Iguazu Falls',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/atthW0zHbfIa8zCsJ?blocks=hide',
     country: 'Brazil',
     description: [
       {
@@ -996,7 +995,8 @@ Depart for your next destination.
   },
   {
     name: 'Sugarloaf Mountain',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att0La64XL3sMPtmQ?blocks=hide',
     country: 'Brazil',
     description: [
       {
@@ -1076,7 +1076,8 @@ Savor the flavors of Brazilian cuisine one last time.
   },
   {
     name: ' Lake balaton',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attgKmOrDOF6QpcS9?blocks=hide',
     country: 'Hungary',
     description: [
       {
@@ -1128,7 +1129,8 @@ Reflect on your Lake Balaton experience.
   },
   {
     name: 'Budapest',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att91hS9YSe8jgxvo?blocks=hide',
     country: 'Hungary',
     description: [
       {
@@ -1185,7 +1187,8 @@ Consider enjoying traditional Hungarian cuisine.
   },
   {
     name: 'Komodo National Park',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att4WXNgglySeuWfT?blocks=hide',
     country: 'Indonesia',
     description: [
       {
@@ -1241,7 +1244,8 @@ Spend your last evening exploring Labuan Bajo or relaxing by the waterfront.
   },
   {
     name: 'Raja Ampat West Papua',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attkl3tSA9tpqMYQj?blocks=hide',
     country: 'Indonesia',
     description: [
       {
@@ -1294,7 +1298,8 @@ Reflect on your incredible experiences in this natural paradise.
   },
   {
     name: 'Gili Islands',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attM6ncL6zPP8p7wX?blocks=hide',
     country: 'Indonesia',
     description: [
       {
@@ -1346,7 +1351,8 @@ Enjoy fresh seafood and the tranquil ambiance.
   },
   {
     name: 'Ubud',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attQpX7Rwjdm8v3RE?blocks=hide',
     country: 'Indonesia',
     description: [
       {
@@ -1409,7 +1415,8 @@ Reflect on your Ubud experience with the sun setting over the lush landscapes.
   },
   {
     name: 'Yogyakarta',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attmasB2oui5Hb1uJ?blocks=hide',
     country: 'Indonesia',
     description: [
       {
@@ -1473,7 +1480,8 @@ Try the unique experience of crossing the "Southern Square Alun-Alun Kidul" in t
   },
   {
     name: 'Kathmandu',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attZV7Ptl5qzqDniH?blocks=hide',
     country: 'Nepal',
     description: [
       {
@@ -1517,7 +1525,8 @@ Have dinner at a rooftop restaurant in Patan, enjoying the views of the historic
   },
   {
     name: 'Pokhara',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attiYRAW4VdkWDL5w?blocks=hide',
     country: 'Nepal',
     description: [
       {
@@ -1558,7 +1567,8 @@ Have dinner at a restaurant offering a cultural show, featuring traditional Nepa
   },
   {
     name: 'Interlaken',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attUgrqBQJl0Husdl?blocks=hide',
     country: 'Switzerland',
     description: [
       {
@@ -1622,7 +1632,8 @@ Have dinner at a local Swiss or international restaurant.
   },
   {
     name: 'Jungfraujoch',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attfTILhbiwAh5mP3?blocks=hide',
     country: 'Switzerland',
     description: [
       {
@@ -1691,7 +1702,8 @@ Reflect on your Jungfraujoch adventure.
   },
   {
     name: 'Lake Geneva',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att4seHCTgGbUNMJ6?blocks=hide',
     country: 'Switzerland',
     description: [
       {
@@ -1763,7 +1775,8 @@ Enjoy the ambiance of the lakeside town.
   },
   {
     name: 'Lucerne',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attCLoca7497ujbhk?blocks=hide',
     country: 'Switzerland',
     description: [
       {
@@ -1833,7 +1846,8 @@ Reflect on your memorable time in Lucerne.
   },
   {
     name: 'Zermatt',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attDw72drg4Q7KDPa?blocks=hide',
     country: 'Switzerland',
     description: [
       {
@@ -1905,7 +1919,8 @@ Reflect on your Zermatt adventure.
   },
   {
     name: 'Glacier National Park',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attUM8dAmPg79bYEr?blocks=hide',
     country: 'America',
     description: [
       {
@@ -1979,7 +1994,8 @@ Have dinner in Apgar Village, celebrating your adventures.
   },
   {
     name: 'Grand Canyon National Park',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attM0jgTu5XCvC4cs?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2059,7 +2075,8 @@ Carry with you memories of the Grand Canyon's awe-inspiring beauty.
   },
   {
     name: 'Las Vegas',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attYNSND66WG2RZ3r?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2140,7 +2157,8 @@ Reflect on your week in Las Vegas and enjoy your final evening.
   },
   {
     name: 'Maui ',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/atte6ji03iposdNMj?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2233,7 +2251,8 @@ Reflect on your week in Maui.
   },
   {
     name: 'New Orlans',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att4m6rrHvbGIpn3p?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2325,7 +2344,8 @@ Reflect on your week in the vibrant city of New Orleans.
   },
   {
     name: 'New York City',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att3uN1YcslestDuy?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2439,7 +2459,8 @@ Reflect on your week in the city that never sleeps.
   },
   {
     name: 'San Fransisco',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attvU1deSA95ZSZct?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2526,7 +2547,8 @@ Reflect on your week in San Francisco.
   },
   {
     name: 'Washington D.C.',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att1RZvNpZNZ54qmh?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2635,7 +2657,8 @@ Reflect on your week in Washington, D.C.
   },
   {
     name: 'Yellowstone National Park',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/attQJoHLzfuI3Z6c9?blocks=hide',
     country: 'America',
     description: [
       {
@@ -2753,7 +2776,8 @@ Depart from Yellowstone National Park.
   },
   {
     name: 'Yosemite National Park',
-    imageUrl: '',
+    imageUrl:
+      'https://airtable.com/appDzPOvML1l3s6Pe/tblecJRq4ym2qr44n/viwgsUTnwrhU5d1rC/recAJ4soj7mGyBksS/fldsoCkHY0s5OdyG2/att6ikhiFlUACmByO?blocks=hide',
     country: 'America',
     description: [
       {

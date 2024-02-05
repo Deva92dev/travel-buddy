@@ -1,10 +1,4 @@
-export interface CountryDataType {
-  name: string;
-  imageUrl: string;
-  numOfPlaces: number;
-}
-
-export const Country = [
+export const CountryData = [
   {
     name: 'Switzerland',
     imageUrl:
